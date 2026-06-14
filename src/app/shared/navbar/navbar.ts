@@ -53,6 +53,7 @@ export class Navbar implements OnInit {
     if (!this.isBrowser) return;
 
     const element = document.getElementById(sectionId);
+
     if (!element) return;
 
     this.activeSection = sectionId;
@@ -60,7 +61,9 @@ export class Navbar implements OnInit {
     this.isScrollingProgrammatically = true;
     if (this.scrollTimeout) clearTimeout(this.scrollTimeout);
 
-    const offsetPosition = element.getBoundingClientRect().top + window.scrollY - 20;
+    let offsetPosition = element.getBoundingClientRect().top + window.scrollY - 20;
+
+    if (sectionId === 'inicio') offsetPosition = element.getBoundingClientRect().top + window.scrollY - 120;
 
     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
 

@@ -1,8 +1,213 @@
 :host {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+.contenedor-global {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #121212;
-  color: #ffffff;
+  width: calc(100% - 8rem);
+  height: calc(100% - 8rem);
+  margin: 4rem;
+}
+
+.contenedor-superior {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 35%;
+
+  .contenedor-nombre {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .nombre-wrapper {
+      position: relative;
+      width: 90%;
+
+      span {
+        position: absolute;
+        top: -0.75em;
+        left: 1.2em;
+        font-weight: 700;
+        font-size: 3.5rem;
+        color: #424242;
+        white-space: nowrap;
+        z-index: 10;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: -3.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 2.5rem;
+          height: 2.5rem;
+          background-color: #424242;
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: calc(-3.5rem + 0.8rem);
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0.9rem;
+          height: 0.9rem;
+          background-color: #4fc3f7;
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+      }
+
+      .nombre-barra {
+        width: 100%;
+        height: 2.4em;
+        background-color: #cfcfcf;
+        border-bottom: 2px solid #424242;
+        border-right: 2px solid #424242;
+        border-radius: 3px;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: -5px;
+          top: -12px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          border: 2.5px solid #424242;
+          background-color: transparent;
+        }
+      }
+
+      .nombre-barra-2 {
+        width: 85%;
+        height: 2px;
+        background-color: #424242;
+        margin-top: 8px;
+        border-radius: 3px;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: -12px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          border: 2.5px solid #424242;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .contenedor-imagen {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .frame {
+      position: relative;
+      width: 65%;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+
+      img {
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+        display: block;
+        border: 5px solid #424242;
+        border-radius: 3px;
+      }
+
+      .corner {
+        position: absolute;
+        display: flex;
+        width: 35%;
+        height: 35%;
+
+        i {
+          display: block;
+          width: 50%;
+          height: 100%;
+          background-color: #4fc3f7;
+        }
+
+        &.corner-tl {
+          top: -2%;
+          left: -2%;
+
+          i {
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(30% 30%, 20% 15%, 90% 25%, 100% 30%, 30% 30%, 30% 100%, 25% 90%, 15% 20%);
+          }
+        }
+
+        &.corner-tr {
+          top: -2%;
+          right: -2%;
+
+          i {
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(70% 30%, 85% 20%, 75% 90%, 70% 100%, 70% 30%, 0% 30%, 10% 25%, 80% 15%);
+          }
+        }
+
+        &.corner-bl {
+          bottom: -2%;
+          left: -2%;
+
+          i {
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(30% 70%, 15% 80%, 25% 10%, 30% 0%, 30% 70%, 100% 70%, 90% 75%, 20% 85%);
+          }
+        }
+
+        &.corner-br {
+          bottom: -2%;
+          right: -2%;
+
+          i {
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(70% 70%, 80% 85%, 10% 75%, 0% 70%, 70% 70%, 70% 0%, 75% 10%, 85% 80%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.contenedor-inferior {
+  width: 100%;
+  height: 65%;
+
+  .contenedor-gang {
+    width: 100%;
+    height: 20%;
+    background-color: rgb(245, 67, 67);
+  }
+
+  .contenedor-informacion {
+    width: 100%;
+    height: 80%;
+    background-color: rgb(57, 197, 22);
+  }
 }
