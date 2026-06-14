@@ -5,16 +5,16 @@ import { History } from './components/history/history';
 import { Contacts } from './components/contacts/contacts';
 import { Navbar } from './shared/navbar/navbar';
 import { afterNextRender, Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import Lenis from 'lenis';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Tecnologies, Proyect, Landing, History, Contacts, Navbar],
+  imports: [Tecnologies, Proyect, Landing, History, Contacts, Navbar],
   standalone: true,
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
+
 export class App {
   protected readonly title = signal('Portfolio_3');
 
