@@ -1,0 +1,16 @@
+<button class="mechanical-button" [class.open]="isOpen" (click)="toggleButton()">
+  <div class="shield-container">
+    <span class="trapezoid top-left"></span>
+    <span class="trapezoid top-right"></span>
+    <span class="trapezoid bottom-right"></span>
+    <span class="trapezoid bottom-left"></span>
+    
+    <div class="pulse"></div>
+
+    <div class="core-blue"></div>
+  </div>
+  
+  <span class="button-text">
+    <ng-content></ng-content>
+  </span>
+</button>

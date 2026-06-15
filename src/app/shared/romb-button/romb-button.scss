@@ -1,0 +1,107 @@
+:host {
+  display: inline-block;
+}
+
+.mechanical-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  outline: none;
+  
+
+  .shield-container {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+    background-color: #f1f1f1;
+  }
+
+  .core-blue {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #4fc3f7;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    overflow: visible;
+  }
+
+  .pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #4fc3f7;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .trapezoid {
+    position: absolute;
+    inset: 0;
+    background-color: #424242;
+    z-index: 1;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    
+    &.top-left {
+      clip-path: polygon(35% 55%, 55% 35%, 50% 0, 0 50%);
+      transform: translate(5, 5);
+    }
+    
+    &.top-right {
+      clip-path: polygon(45% 35%, 65% 55%, 100% 50%, 50% 0%);
+      transform: translate(0, 0);
+    }
+    
+    &.bottom-right {
+      clip-path: polygon(65% 45%, 45% 65%, 50% 100%, 100% 50%);
+      transform: translate(0, 0);
+    }
+    
+    &.bottom-left {
+      clip-path: polygon(55% 65%, 35% 45%, 0% 50%, 50% 100%);
+      transform: translate(0, 0);
+    }
+  }
+
+  .button-text {
+    font-weight: 700;
+    color: #424242;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+  }
+
+  &.open {
+    .button-text {
+      color: #4fc3f7;
+    }
+
+    .pulse {
+    animation: pulso 3s ease-out infinite;
+    }
+
+    .trapezoid.top-left     { transform: translate(-20%, -20%); }
+    .trapezoid.top-right    { transform: translate(20%, -20%); }
+    .trapezoid.bottom-right { transform: translate(20%, 20%); }
+    .trapezoid.bottom-left  { transform: translate(-20%, 20%); }
+  }
+}
+
+@keyframes pulso {
+  0%    { transform: translate(-50%, -50%) scale(1);   opacity: 0.6; }
+  50%   { transform: translate(-50%, -50%) scale(2.5); opacity: 0;   }
+  100%  { transform: translate(-50%, -50%) scale(2.5); opacity: 0;   }
+}
