@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-romb-button',
@@ -9,9 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './romb-button.scss',
 })
 export class RombButton {
-  isOpen: boolean = false;
+  @Input() isOpen: boolean = false;
+  @Output() clicked = new EventEmitter<void>();
 
-  toggleButton() {
-    this.isOpen = !this.isOpen;
+  onClick() {
+    this.clicked.emit();
   }
 }

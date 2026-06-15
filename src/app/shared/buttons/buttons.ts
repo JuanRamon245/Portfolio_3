@@ -10,7 +10,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class Buttons {
   @Input() texto: string = 'Presentación';
   
-  // Emite un evento cuando el usuario hace clic en el div
   @Output() clickBoton = new EventEmitter<void>();
 
   alHacerClic() {

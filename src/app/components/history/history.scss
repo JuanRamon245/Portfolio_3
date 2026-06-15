@@ -1,0 +1,333 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.contenedor-global {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 8rem);
+  margin: 4rem;
+  height: auto;
+}
+
+.contenedor-superior {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 3rem;
+
+  .contenedor-nombre {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .nombre-wrapper {
+      position: relative;
+      width: 90%;
+
+      span {
+        position: absolute;
+        top: -0.75em;
+        left: 1.2em;
+        font-weight: 700;
+        font-size: 3.5rem;
+        color: #424242;
+        white-space: nowrap;
+        z-index: 10;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: -3.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 2.5rem;
+          height: 2.5rem;
+          background-color: #424242;
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: calc(-3.5rem + 0.8rem);
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0.9rem;
+          height: 0.9rem;
+          background-color: #4fc3f7;
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+      }
+
+      .nombre-barra {
+        width: 100%;
+        height: 2.4em;
+        background-color: #cfcfcf;
+        border-bottom: 3px solid #424242;
+        border-right: 3px solid #424242;
+        border-radius: 3px;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: -6px;
+          top: -12px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          border: 2.5px solid #424242;
+          background-color: transparent;
+        }
+      }
+
+      .nombre-barra-2 {
+        width: 85%;
+        height: 2.5px;
+        background-color: #424242;
+        margin-top: 8px;
+        border-radius: 3px;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: -12px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          border: 2.5px solid #424242;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.timeline-izquierda {
+  width: 10%;
+  min-width: 80px;
+  display: flex;
+  justify-content: center;
+
+  .wrapper-botones {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0;
+    width: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5px;
+      background: linear-gradient(to bottom, 
+        transparent 0px, 
+        #424242 48px, 
+        #424242 calc(100% - 48px),
+        transparent 100%
+      );
+      z-index: 1;
+    }
+
+    .nodo-timeline {
+      position: relative;
+      z-index: 2;
+      height: 3rem;
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.contenedor-inferior {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+
+.contenido-derecha {
+  width: 90%;
+  padding-left: 2rem;
+  display: flex;
+  align-items: flex-start;
+
+  .tarjeta-informacion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .bloque-titulo-wrapper {
+    position: relative; 
+    width: 80%;
+
+    .bloque-titulo {
+      width: 100%;
+      background-color: #cfcfcf;
+      padding: 1.5rem 2rem;
+      border-radius: 4px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        background: linear-gradient(to bottom, #4fc3f7 50%, #424242 50%);
+        background-size: 100% 200%;
+        background-position: 0% 100%;
+        animation: vaciadoLiquido 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+
+      h2 {
+        margin: 0;
+        font-weight: 700;
+        font-size: 2rem;
+        color: #424242;
+        opacity: 0;
+        animation: difuminadoTexto 0.6s ease-out 0.2s forwards;
+      }
+    }
+
+    .bloque-fecha {
+      position: absolute;
+      top: -1.4rem;
+      transform: translateY(-50%);
+      right: -1rem;
+      background-color: #424242;
+      padding: 0.8rem 3rem 0.8rem 1.4rem;
+      clip-path: polygon(0 0, 0 100%, 82% 100%, 88% 50%, 82% 0);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      
+      opacity: 0;
+      animation: difuminadoTexto 0.5s ease-out forwards;
+
+      span {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
+      }
+    }
+
+    .extension {
+      position: absolute;
+      top: 0;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 50% 50%);
+      background-color: #424242;
+      pointer-events: none;
+      z-index: 4;
+      right: -1rem; 
+      transform: translateY(-50%) scaleX(0.2);
+      transform-origin: left center;
+    }
+
+    .ext-1 {
+      width: 2rem;
+      height: 2.7rem;
+      opacity: 0.8;
+      animation: estirarFlecha1 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
+    }
+
+    .ext-2 {
+      width: 1.8rem;
+      height: 2.7rem;
+      opacity: 0.6;
+      animation: estirarFlecha2 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.15s forwards;
+    }
+
+    .ext-3 {
+      width: 1.6rem;
+      height: 2.7rem;
+      opacity: 0.4;
+      animation: estirarFlecha3 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+    }
+  }
+
+  .bloque-descripcion {
+    width: 100%;
+    min-height: 16rem;
+    background-color: #f7f7f7;
+    padding: 3rem;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+
+    p {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #555555;
+      opacity: 0;
+      animation: difuminadoTexto 0.6s ease-out 0.3s forwards;
+    }
+  }
+}
+
+@keyframes vaciadoLiquido {
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes estirarFlecha1 {
+  to {
+    right: -1.4rem;
+    transform: translateY(-50%) scaleX(1);
+  }
+}
+
+@keyframes estirarFlecha2 {
+  to {
+    right: -2.8rem;
+    transform: translateY(-50%) scaleX(1);
+  }
+}
+
+@keyframes estirarFlecha3 {
+  to {
+    right: -4.2rem;
+    transform: translateY(-50%) scaleX(1);
+  }
+}
+
+@keyframes difuminadoTexto {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

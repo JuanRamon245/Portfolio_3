@@ -1,4 +1,4 @@
-<button class="mechanical-button" [class.open]="isOpen" (click)="toggleButton()">
+<button class="mechanical-button" [class.open]="isOpen" (click)="onClick()">
   <div class="shield-container">
     <span class="trapezoid top-left"></span>
     <span class="trapezoid top-right"></span>
@@ -9,8 +9,4 @@
 
     <div class="core-blue"></div>
   </div>
-  
-  <span class="button-text">
-    <ng-content></ng-content>
-  </span>
 </button>

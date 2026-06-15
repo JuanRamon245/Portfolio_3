@@ -1,5 +1,54 @@
-<p>history works!</p>
-<app-buttons
-  [texto]="'Iniciar Sesión'" 
-  (clickBoton)="tuFuncionEnElComponentePadre()">
-</app-buttons>
+<div class="contenedor-global">
+  
+  <div class="contenedor-superior">
+    <div class="contenedor-nombre">
+      <div class="nombre-wrapper">
+        <span>Trayectoria laboral</span>
+        <div class="nombre-barra"></div>
+        <div class="nombre-barra-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor-inferior">
+    <div class="timeline-izquierda">
+      <div class="wrapper-botones">
+        @for (item of hitos(); track item.id) {
+          <div class="nodo-timeline">
+            <app-romb-button 
+              [isOpen]="hitoActivoId() === item.id" 
+              (clicked)="seleccionarHito(item.id)">
+            </app-romb-button>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="contenido-derecha">
+      @if (hitoVisible(); as hito) {
+        <div class="tarjeta-informacion">
+          
+          <div class="bloque-titulo-wrapper">
+            <div class="bloque-titulo">
+              <h2>{{ hito.titulo }}</h2>
+            </div>
+            
+            <div class="bloque-fecha">
+              <span>{{ hito.fecha }}</span>
+            </div>
+            
+            <div class="extension ext-1"></div>
+            <div class="extension ext-2"></div>
+            <div class="extension ext-3"></div>
+          </div>
+
+          <div class="bloque-descripcion">
+            <p>{{ hito.descripcion }}</p>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</div>

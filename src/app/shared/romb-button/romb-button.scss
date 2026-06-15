@@ -18,8 +18,13 @@
     position: relative;
     width: 3rem;
     height: 3rem;
-    margin-right: 1rem;
-    background-color: #f1f1f1;
+    margin-right: 0;
+    background: linear-gradient(to bottom, 
+      transparent 5px, 
+      white 5px, 
+      white calc(100% - 5px), 
+      transparent calc(100% - 5px)
+    );
   }
 
   .core-blue {
@@ -77,20 +82,9 @@
     }
   }
 
-  .button-text {
-    font-weight: 700;
-    color: #424242;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-  }
-
   &.open {
-    .button-text {
-      color: #4fc3f7;
-    }
-
     .pulse {
-    animation: pulso 3s ease-out infinite;
+      animation: pulso 3s ease-out infinite;
     }
 
     .trapezoid.top-left     { transform: translate(-20%, -20%); }
