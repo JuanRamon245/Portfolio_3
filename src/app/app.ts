@@ -35,19 +35,17 @@ export class App {
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
-      const links = document.querySelectorAll('a[href^="#"]');
+
+      const links = document.querySelectorAll('.nav-link');
       
       links.forEach(link => {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
-
           const targetId = link.getAttribute('href');
           if (targetId) {
             const targetElement = document.querySelector(targetId) as HTMLElement;
             
             if (targetElement) {
               lenis.scrollTo(targetElement, {
-                offset: 0,
                 immediate: false,
                 duration: 1.4
               });
@@ -55,7 +53,6 @@ export class App {
           }
         });
       });
-
     });
   }
 }

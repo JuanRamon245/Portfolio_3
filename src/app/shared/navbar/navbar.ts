@@ -3,11 +3,10 @@ import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  standalone: true,
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-
 export class Navbar implements OnInit {
   activeSection: string = 'inicio';
   private sections = ['inicio', 'sobre-mi', 'proyectos', 'tecnologias', 'contacto'];
@@ -33,7 +32,7 @@ export class Navbar implements OnInit {
   }
 
   private updateActiveSection() {
-    const scrollPos = window.scrollY + window.innerHeight * 0.3;
+    const scrollPos = window.scrollY + window.innerHeight * 0.4;
 
     for (const id of [...this.sections].reverse()) {
       const el = document.getElementById(id);
@@ -49,26 +48,15 @@ export class Navbar implements OnInit {
   }
 
   scrollTo(sectionId: string, event: Event) {
-    event.preventDefault();
     if (!this.isBrowser) return;
 
-    const element = document.getElementById(sectionId);
-
-    if (!element) return;
-
     this.activeSection = sectionId;
-
     this.isScrollingProgrammatically = true;
+
     if (this.scrollTimeout) clearTimeout(this.scrollTimeout);
-
-    let offsetPosition = element.getBoundingClientRect().top + window.scrollY - 20;
-
-    if (sectionId === 'inicio') offsetPosition = element.getBoundingClientRect().top + window.scrollY - 120;
-
-    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
 
     this.scrollTimeout = setTimeout(() => {
       this.isScrollingProgrammatically = false;
-    }, 800);
+    }, 1500);
   }
 }
