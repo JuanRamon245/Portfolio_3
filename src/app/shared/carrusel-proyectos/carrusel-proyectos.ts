@@ -20,6 +20,8 @@ export class CarruselProyectos {
   public animandoIzq = signal<boolean>(false);
   public animandoDer = signal<boolean>(false);
 
+  public animandoCard = signal<boolean>(false);
+
   constructor(
     private el: ElementRef,
     @Inject(PLATFORM_ID) private platformId: object
@@ -46,6 +48,7 @@ export class CarruselProyectos {
 
   siguiente() {
     this.currentIndex.update(i => (i === this.proyectos.length - 1 ? 0 : i + 1));
+    this.dispararAnimacionCard();
 
     this.animandoDer.set(true);
     setTimeout(() => this.animandoDer.set(false), 500);
@@ -53,12 +56,20 @@ export class CarruselProyectos {
 
   anterior() {
     this.currentIndex.update(i => (i === 0 ? this.proyectos.length - 1 : i - 1));
+    this.dispararAnimacionCard();
 
     this.animandoIzq.set(true);
     setTimeout(() => this.animandoIzq.set(false), 500);
   }
 
   irA(index: number) {
+    if (this.currentIndex() === index) return;
     this.currentIndex.set(index);
+    this.dispararAnimacionCard();
+  }
+
+  private dispararAnimacionCard() {
+    this.animandoCard.set(true);
+    setTimeout(() => this.animandoCard.set(false), 300);
   }
 }

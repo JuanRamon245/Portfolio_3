@@ -20,13 +20,15 @@
       </button>
 
       <div class="tarjeta-y-paginacion-wrapper">
-        <div class="tarjeta-carrusel">
+        <div class="tarjeta-carrusel" [class.cambiando]="animandoCard()">
           
           <div class="tarjeta-header">
-            <h3>{{ proyectos[currentIndex()].titulo }}</h3>
-            <div class="icono-rombo">
-              <span class="material-symbols-outlined">{{ proyectos[currentIndex()].iconoPrincipal }}</span>
+            <div class="icono-octagono">
+              <div class="icono-octagono-interno">
+                <span class="material-symbols-outlined">{{ proyectos[currentIndex()].iconoPrincipal }}</span>
+              </div>
             </div>
+            <h3>{{ proyectos[currentIndex()].titulo }}</h3>
           </div>
           <hr class="divisor">
 
