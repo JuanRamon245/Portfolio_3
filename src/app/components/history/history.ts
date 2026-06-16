@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, Inject, PLATFORM_ID, signal } from '@angular/core';
 import { RombButton } from '../../shared/romb-button/romb-button';
 
 interface HitoTimeline {
@@ -51,11 +51,41 @@ export class History {
   ]);
 
   public hitoActivoId = signal<string>('step1');
-  
   public hitoVisible = signal<HitoTimeline | null>(null);
 
-  constructor() {
+  public isIntersecting = signal<boolean>(false);
+  private observer: IntersectionObserver | null = null;
+
+  constructor(
+    private el: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: object
+  ) {
     this.hitoVisible.set(this.hitos()[0]);
+  }
+
+  ngAfterViewInit() {
+    // Solo ejecutamos el Observer en el navegador
+    if (isPlatformBrowser(this.platformId)) {
+      this.observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            this.isIntersecting.set(true);
+            // Una vez disparada la animación, podemos dejar de observar si no quieres que se repita
+            this.observer?.disconnect(); 
+          }
+        },
+        {
+          // Se activa cuando el 20% de la sección es visible en pantalla
+          threshold: 0.2 
+        }
+      );
+
+      this.observer.observe(this.el.nativeElement);
+    }
+  }
+
+  ngOnDestroy() {
+    this.observer?.disconnect();
   }
 
   public seleccionarHito(id: string) {

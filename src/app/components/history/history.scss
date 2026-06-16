@@ -40,6 +40,8 @@
         color: #424242;
         white-space: nowrap;
         z-index: 10;
+        opacity: 0;
+        transform: translateY(10px);
 
         &::before {
           content: '';
@@ -74,44 +76,104 @@
         border-right: 3px solid #424242;
         border-radius: 3px;
         position: relative;
+        box-shadow: inset -4px -4px 6px rgba(42, 42, 42, 0.2);
+        transform: scaleX(0); 
+        transform-origin: left center;
 
         &::after {
           content: '';
           position: absolute;
-          right: -6px;
+          right: -7.5px;
           top: -12px;
           width: 8px;
           height: 8px;
           border-radius: 50%;
           border: 2.5px solid #424242;
           background-color: transparent;
+          
+          transform: scale(0);
         }
       }
 
       .nombre-barra-2 {
-        width: 85%;
+        width: 85%; 
         height: 2.5px;
         background-color: #424242;
         margin-top: 8px;
         margin-left: 1rem;
         border-radius: 3px;
         position: relative;
+        
+        transform: scaleX(0);
+        transform-origin: left center;
 
         &::after {
           content: '';
           position: absolute;
           right: -12px;
           top: 50%;
-          transform: translateY(-50%);
+          margin-top: -7.5px;
           width: 8px;
           height: 8px;
           border-radius: 50%;
           border: 2.5px solid #424242;
           background-color: transparent;
+          
+          transform: translateY(-50%) scale(0);
         }
       }
     }
   }
+}
+
+.contenedor-global.visible {
+  .nombre-wrapper {
+    span {
+      animation: aparecerTextoFijo 0.5s ease-out forwards;
+
+      &::before, &::after {
+        animation: aparecerScale 0.3s ease-out 0.5s forwards;
+      }
+    }
+
+    .nombre-barra {
+      animation: estirarEscalaX 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+      &::after {
+        animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 0.8s forwards;
+      }
+    }
+
+    .nombre-barra-2 {
+      animation: estirarEscalaX 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+
+      &::after {
+        animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 1s forwards;
+      }
+    }
+  }
+}
+
+@keyframes estirarEscalaX {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes aparecerTextoFijo {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecerScale {
+  from { transform: translateY(-50%) scale(0); }
+  to   { transform: translateY(-50%) scale(1); }
+}
+
+@keyframes aparecerBolita {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
 }
 
 .timeline-izquierda {
@@ -189,6 +251,7 @@
       box-sizing: border-box;
       position: relative;
       overflow: hidden;
+      box-shadow: 0px 0px 5px rgba(42, 42, 42, 0.3);
 
       &::before {
         content: '';
@@ -201,6 +264,7 @@
         background-size: 100% 200%;
         background-position: 0% 100%;
         animation: vaciadoLiquido 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        box-shadow: 0px 2px 5px rgba(42, 42, 42, 0.3);
       }
 
       h2 {
@@ -219,7 +283,7 @@
       transform: translateY(-50%);
       right: -1rem;
       background-color: #424242;
-      padding: 0.8rem 3rem 0.8rem 1.4rem;
+      padding: 0.6rem 3rem 0.66rem 1.4rem;
       clip-path: polygon(0 0, 0 100%, 82% 100%, 88% 50%, 82% 0);
       z-index: 5;
       display: flex;
@@ -252,21 +316,21 @@
 
     .ext-1 {
       width: 2rem;
-      height: 2.7rem;
+      height: 2.5rem;
       opacity: 0.8;
       animation: estirarFlecha1 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
     }
 
     .ext-2 {
       width: 1.8rem;
-      height: 2.7rem;
+      height: 2.5rem;
       opacity: 0.6;
       animation: estirarFlecha2 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.15s forwards;
     }
 
     .ext-3 {
       width: 1.6rem;
-      height: 2.7rem;
+      height: 2.5rem;
       opacity: 0.4;
       animation: estirarFlecha3 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
     }
@@ -280,6 +344,7 @@
     border-radius: 4px;
     border: 1px solid #e0e0e0;
     box-sizing: border-box;
+    box-shadow: 0px 0px 5px rgba(42, 42, 42, 0.3);
 
     p {
       margin: 0;
