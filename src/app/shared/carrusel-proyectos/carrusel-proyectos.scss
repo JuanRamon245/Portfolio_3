@@ -191,6 +191,16 @@
   gap: 3rem; 
   width: 100%;
   max-width: 1200px;
+  overflow: visible;
+  padding: 2rem 1rem;
+
+  &.bloqueado {
+    .flecha-btn,
+    .barra-progreso {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
 }
 
 .tarjeta-y-paginacion-wrapper {
@@ -201,6 +211,8 @@
   gap: 1.5rem;
   max-width: calc(100% - 100px);
   margin: 0 auto;
+  overflow: hidden;
+  padding: 10px;
 }
 
 .flecha-btn {
@@ -272,30 +284,45 @@
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(42, 42, 42, 0.3);
   
-  /* Animación suave de entrada de datos tipo "glitch" o "fade" limpio */
-  &.cambiando {
-    animation: cambiarTarjeta 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  &.deslizar-der {
+    animation: slideInDesdeDerecha 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  &.deslizar-izq {
+    animation: slideInDesdeIzquierda 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 }
 
-@keyframes cambiarTarjeta {
+@keyframes slideInDesdeDerecha {
   0% {
-    opacity: 0.3;
-    transform: translateY(4px);
-    filter: blur(1px);
+    opacity: 0;
+    transform: translateX(70px);
+    filter: blur(2px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
     filter: blur(0);
   }
 }
 
-/* --- CABECERA DE TARJETA CON ICONO OCTÁGONO (ACTUALIZADO) --- */
+@keyframes slideInDesdeIzquierda {
+  0% {
+    opacity: 0;
+    transform: translateX(-70px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
 .tarjeta-header {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Separación cómoda entre icono y texto */
+  gap: 1.5rem;
 
   h3 {
     margin: 0;
@@ -308,15 +335,14 @@
 .icono-octagono {
   width: 42px;
   height: 42px;
-  background-color: #4fc3f7; /* Color del borde azul */
+  background-color: #4fc3f7;
   clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
   display: flex;
   justify-content: center;
   align-items: center;
 
-  /* Capa interior: Relleno oscuro ligeramente más pequeño */
   .icono-octagono-interno {
-    width: calc(100% - 4px); /* Espesor del borde (2px por cada lado) */
+    width: calc(100% - 4px);
     height: calc(100% - 4px);
     background-color: #424242;
     clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
@@ -460,7 +486,7 @@
       margin-left: -5px;
       border-width: 5px;
       border-style: solid;
-      border-color: #333 transparent transparent transparent;
+      border-color: #424242 transparent transparent transparent;
     }
   }
 
@@ -488,21 +514,23 @@
   border-radius: 2px;
   box-shadow: 0px 1px 4px rgba(42, 42, 42, 0.25);
 
-  background: linear-gradient(to right, #4fc3f7 50%, #424242 50%);
+  background: linear-gradient(to right, #4fc3f7 50%, transparent 50%);
   background-size: 200% 100%;
   background-position: 100% 0%;
+  background-color: #424242;
   
-  transition: background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-
+  transition: 
+    background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 
   &.activa {
     background-position: 0% 0%;
   }
 
   &:hover:not(.activa) {
-    background: linear-gradient(to right, #4fc3f7 50%, #cfcfcf 50%);
-    background-size: 200% 100%;
-    background-position: 100% 0%;
+    background-color: #cfcfcf;
+    box-shadow: 0px 2px 6px rgba(42, 42, 42, 0.4);
   }
 }
 

@@ -20,7 +20,7 @@ export class CarruselProyectos {
   public animandoIzq = signal<boolean>(false);
   public animandoDer = signal<boolean>(false);
 
-  public animandoCard = signal<boolean>(false);
+  public efectoDireccion = signal<string>('');
 
   constructor(
     private el: ElementRef,
@@ -47,29 +47,35 @@ export class CarruselProyectos {
   }
 
   siguiente() {
+    if (this.efectoDireccion()) return;
+
     this.currentIndex.update(i => (i === this.proyectos.length - 1 ? 0 : i + 1));
-    this.dispararAnimacionCard();
+    this.dispararAnimacion('deslizar-der');
 
     this.animandoDer.set(true);
     setTimeout(() => this.animandoDer.set(false), 500);
   }
 
   anterior() {
+    if (this.efectoDireccion()) return;
+
     this.currentIndex.update(i => (i === 0 ? this.proyectos.length - 1 : i - 1));
-    this.dispararAnimacionCard();
+    this.dispararAnimacion('deslizar-izq');
 
     this.animandoIzq.set(true);
     setTimeout(() => this.animandoIzq.set(false), 500);
   }
 
   irA(index: number) {
-    if (this.currentIndex() === index) return;
+    if (this.efectoDireccion() || this.currentIndex() === index) return;
+    const direccion = index > this.currentIndex() ? 'deslizar-der' : 'deslizar-izq';
+    this.dispararAnimacion(direccion);
+    
     this.currentIndex.set(index);
-    this.dispararAnimacionCard();
   }
 
-  private dispararAnimacionCard() {
-    this.animandoCard.set(true);
-    setTimeout(() => this.animandoCard.set(false), 300);
+  private dispararAnimacion(direccion: string) {
+    this.efectoDireccion.set(direccion);
+    setTimeout(() => this.efectoDireccion.set(''), 750);
   }
 }

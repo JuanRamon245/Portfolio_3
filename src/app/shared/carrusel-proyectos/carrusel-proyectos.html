@@ -10,7 +10,7 @@
   </div>
 
   <div class="contenedor-inferior" *ngIf="proyectos.length > 0">
-    <div class="carrusel-wrapper">
+    <div class="carrusel-wrapper" [class.bloqueado]="efectoDireccion()">
       
       <button class="flecha-btn izq" (click)="anterior()">
         <div class="rombo-bg" [class.pulsado]="animandoIzq()">
@@ -20,7 +20,7 @@
       </button>
 
       <div class="tarjeta-y-paginacion-wrapper">
-        <div class="tarjeta-carrusel" [class.cambiando]="animandoCard()">
+        <div class="tarjeta-carrusel" [ngClass]="efectoDireccion()">
           
           <div class="tarjeta-header">
             <div class="icono-octagono">
