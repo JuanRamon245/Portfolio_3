@@ -1,0 +1,81 @@
+<div class="contenedor-global" [class.visible]="isIntersecting()">
+  <div class="contenedor-superior">
+    <div class="contenedor-nombre">
+      <div class="nombre-wrapper">
+        <span>{{ titulo }}</span>
+        <div class="nombre-barra"></div>
+        <div class="nombre-barra-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor-inferior" *ngIf="proyectos.length > 0">
+    <div class="carrusel-wrapper">
+      
+      <button class="flecha-btn izq" (click)="anterior()">
+        <div class="rombo-bg" [class.pulsado]="animandoIzq()">
+          <span class="material-symbols-outlined">arrow_back</span>
+          <div class="pulse"></div>
+        </div>
+      </button>
+
+      <div class="tarjeta-y-paginacion-wrapper">
+        <div class="tarjeta-carrusel">
+          
+          <div class="tarjeta-header">
+            <h3>{{ proyectos[currentIndex()].titulo }}</h3>
+            <div class="icono-rombo">
+              <span class="material-symbols-outlined">{{ proyectos[currentIndex()].iconoPrincipal }}</span>
+            </div>
+          </div>
+          <hr class="divisor">
+
+          <div class="tarjeta-contenido">
+            <p>{{ proyectos[currentIndex()].contenido }}</p>
+          </div>
+
+          <hr class="divisor">
+
+          <div class="tarjeta-footer">
+            <div class="tecnologias-seccion">
+              <div class="boton-contenedor estatico">
+                <div class="bloque bloque-principal">
+                  <div class="icono-tech tooltip-container" *ngFor="let tech of proyectos[currentIndex()].tecnologias">
+                    <span class="texto-contenido material-symbols-outlined">{{ tech.iconoClase }}</span>
+                    <span class="tooltip-text">{{ tech.nombre }}</span>
+                  </div>
+                </div>
+                <div class="bloque barra-1"></div>
+                <div class="bloque barra-2"></div>
+                <div class="bloque barra-3"></div>
+                <div class="bloque barra-4"></div>
+              </div>
+            </div>
+
+            <div class="enlaces-seccion">
+              <a *ngFor="let link of proyectos[currentIndex()].enlaces" [href]="link.url" target="_blank" class="icono-rombo enlace">
+                <span class="material-symbols-outlined">{{ link.iconoClase }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paginacion-barras">
+          <div class="barra-progreso" 
+               *ngFor="let p of proyectos; let i = index" 
+               [class.activa]="i === currentIndex()"
+               (click)="irA(i)">
+          </div>
+        </div>
+      </div>
+
+      <button class="flecha-btn der" (click)="siguiente()">
+        <div class="rombo-bg" [class.pulsado]="animandoDer()">
+          <span class="material-symbols-outlined">arrow_forward</span>
+          <div class="pulse"></div>
+        </div>
+      </button>
+      
+    </div>
+  </div>
+</div>

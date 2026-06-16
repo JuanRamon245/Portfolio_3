@@ -1,1 +1,11 @@
-<p>proyect works!</p>
+<section class="seccion-proyectos">
+    <app-carrusel-proyectos 
+        [titulo]="'Proyectos principales'" 
+        [proyectos]="proyectosPrincipales()">
+    </app-carrusel-proyectos>
+
+    <app-carrusel-proyectos 
+        [titulo]="'Otros proyectos'" 
+        [proyectos]="proyectosSecundarios()">
+    </app-carrusel-proyectos>
+</section>

@@ -1,13 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, Inject, PLATFORM_ID, signal } from '@angular/core';
 import { RombButton } from '../../shared/romb-button/romb-button';
-
-interface HitoTimeline {
-  id: string;
-  titulo: string;
-  fecha: string;
-  descripcion: string;
-}
+import { HitoTimeline } from '../../shared/models/hito-timeline/hito-timeline';
 
 @Component({
   selector: 'app-history',
@@ -64,18 +58,15 @@ export class History {
   }
 
   ngAfterViewInit() {
-    // Solo ejecutamos el Observer en el navegador
     if (isPlatformBrowser(this.platformId)) {
       this.observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
             this.isIntersecting.set(true);
-            // Una vez disparada la animación, podemos dejar de observar si no quieres que se repita
             this.observer?.disconnect(); 
           }
         },
         {
-          // Se activa cuando el 20% de la sección es visible en pantalla
           threshold: 0.2 
         }
       );
