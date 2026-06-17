@@ -10,47 +10,56 @@
     </div>
   </div>
 
-<div class="contenedor-inferior" *ngIf="secciones.length > 0">
-  
-  <div class="panel-lateral">
-    <div class="menu-contenedor">
-      <div class="menu-item" 
-           *ngFor="let seccion of secciones; let i = index"
-           [class.activo]="seccionActiva() === i"
-           (click)="seleccionarSeccion(i)">
-        
-        <div class="indicador-activo"></div>
-        
-        <div class="icono-rombo-pequeno">
-          <span class="material-symbols-outlined">{{ seccion.iconoClase }}</span>
-        </div>
-        <span class="menu-texto">{{ seccion.nombre }}</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="panel-contenido">
-    <div class="grid-tecnologias">
-      
-      <div class="tech-card" *ngFor="let tech of secciones[seccionActiva()].tecnologias">
-        
-        <div class="badge-nivel">
-          <span>{{ tech.nivel }}</span>
-        </div>
-
-        <div class="centro-rombo">
-          <div class="rombo-interior">
-            <span class="material-symbols-outlined">{{ tech.iconoClase }}</span>
+  <div class="contenedor-inferior" *ngIf="secciones.length > 0">
+    
+    <div class="panel-lateral">
+      <div class="menu-contenedor">
+        <div class="menu-item" 
+             *ngFor="let seccion of secciones; let i = index"
+             [class.activo]="seccionActiva() === i"
+             (click)="seleccionarSeccion(i)">
+          
+          <div class="indicador-activo"></div>
+          
+          <div class="icono-rombo-pequeno">
+            <span class="material-symbols-outlined">{{ seccion.iconoClase }}</span>
           </div>
+          <span class="menu-texto">{{ seccion.nombre }}</span>
         </div>
-
-        <div class="tech-footer">
-          <h4>{{ tech.nombre }}</h4>
-        </div>
-        
       </div>
-
     </div>
+  
+    <div class="panel-contenido" 
+         [class.animando]="isAnimating()"
+         (animationend)="finalizarAnimacion()">
+         
+      <div class="grid-tecnologias">
+        <div class="tech-card" *ngFor="let tech of secciones[seccionActiva()].tecnologias">
+          
+          <div class="badge-nivel-bloque">
+            <span class="badge-texto">{{ tech.nivel }}</span>
+            <div class="contenedor-barritas">
+              <div class="barrita-nivel" *ngFor="let b of getBarrasNivel(tech?.nivel || 'bajo')"></div>
+            </div>
+          </div>
+  
+          <div class="centro-rombo">
+            <div class="rombo-interior">
+              <img [src]="tech.iconoClase" 
+                   [style.width.px]="tech.tamano" 
+                   [style.height.px]="tech.tamano" 
+                   [alt]="tech.nombre" 
+                   class="tech-img" />
+            </div>
+          </div>
+  
+          <div class="tech-footer">
+            <h4>{{ tech.nombre }}</h4>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  
   </div>
-
 </div>

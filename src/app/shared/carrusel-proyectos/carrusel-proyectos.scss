@@ -448,8 +448,10 @@
 }
 
 .texto-contenido {
-  color: #424242;
-  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
 }
 
 .barra-1 { width: 15px; } .barra-1::before { opacity: 0.9; }
@@ -462,8 +464,8 @@
 
   .tooltip-text {
     visibility: hidden;
-    background-color: #333;
-    color: #fff;
+    background-color: #424242;
+    color: #f1f1f1;
     text-align: center;
     border-radius: 4px;
     padding: 4px 8px;

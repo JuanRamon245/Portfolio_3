@@ -1,5 +1,88 @@
-<p>contacts works!</p>
-<app-buttons
-  [texto]="'Iniciar Sesión'" 
-  (clickBoton)="tuFuncionEnElComponentePadre()">
-</app-buttons>
+<div class="contenedor-global" [class.visible]="isIntersecting()">
+  
+  <div class="contenedor-superior">
+    <div class="contenedor-nombre">
+      <div class="nombre-wrapper">
+        <span>Contacto</span>
+        <div class="nombre-barra"></div>
+        <div class="nombre-barra-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor-inferior">
+    <div class="contacto-bloque-wrapper">
+
+      <div class="contacto-card fila-completa">
+        <div class="card-info-izquierda">
+          <span class="card-titulo">Teléfono</span>
+          <div class="divisor-vertical"></div>
+          <span class="card-dato">+34 611 44 68 09</span>
+        </div>
+        <div class="card-acciones">
+          <button class="btn-accion-cuadrado" (click)="copiarTexto('611 44 68 09')" title="Copiar Teléfono">
+            <div class="icono-rombo">
+              <span class="material-symbols-outlined">content_copy</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="contacto-card fila-completa">
+        <div class="card-info-izquierda">
+          <span class="card-titulo">Correo</span>
+          <div class="divisor-vertical"></div>
+          <span class="card-dato">juanramondeleonmartin@gmail.com</span>
+        </div>
+        <div class="card-acciones">
+          <button class="btn-accion-cuadrado" (click)="copiarTexto('juanramondeleonmartin@gmail.com')" title="Copiar Correo">
+            <div class="icono-rombo">
+              <span class="material-symbols-outlined">content_copy</span>
+            </div>
+          </button>
+          <a href="https://mail.google.com/mail/?view=cm&to=juanramondeleonmartin@gmail.com" target="_blank" rel="noopener noreferrer" class="btn-accion-cuadrado" title="Enviar Mensaje">
+            <div class="icono-rombo">
+              <span class="material-symbols-outlined">send</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contacto-fila-doble">
+        
+        <a href="https://github.com/JuanRamon245" target="_blank" rel="noopener noreferrer" class="contacto-card card-mitad github">
+          <span class="card-titulo">Github</span>
+          <div class="btn-accion-alargado">
+            <div class="icono-rombo">
+              <i class="fab fa-github"></i>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/juan-ramón-de-león-martín-918388343/" target="_blank" rel="noopener noreferrer" class="contacto-card card-mitad linkedin">
+          <span class="card-titulo">Linkedin</span>
+          <div class="btn-accion-alargado">
+            <div class="icono-rombo">
+              <i class="fab fa-linkedin"></i>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="contacto-fila-curriculum">
+        <div class="contacto-card card-mitad curriculum">
+          <span class="card-titulo">Currículum</span>
+          <div class="card-acciones">
+            <a href="pdf/Curriculum Juan Ramón de León Martín.pdf" download class="btn-accion-cuadrado" title="Descargar CV">
+              <div class="icono-rombo">
+                <span class="material-symbols-outlined">download</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

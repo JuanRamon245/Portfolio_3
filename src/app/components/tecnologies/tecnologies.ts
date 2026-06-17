@@ -15,25 +15,27 @@ export class Tecnologies {
 
   public seccionActiva = signal<number>(0);
 
+  public isAnimating = signal<boolean>(false);
+
   public secciones: SeccionTecnologias[] = [
     {
       nombre: 'Frontend Web',
       iconoClase: 'html',
       tecnologias: [
-        { nombre: 'Angular', iconoClase: 'code', nivel: 'Avanzado' },
-        { nombre: 'TypeScript', iconoClase: 'javascript', nivel: 'Medio' },
-        { nombre: 'SCSS', iconoClase: 'css', nivel: 'Avanzado' },
-        { nombre: 'RxJS', iconoClase: 'stream', nivel: 'Medio' }
+        { nombre: 'Angular', iconoClase: 'code', nivel: 'Avanzado', tamano: 30 },
+        { nombre: 'TypeScript', iconoClase: 'javascript', nivel: 'Medio', tamano: 30 },
+        { nombre: 'SCSS', iconoClase: 'css', nivel: 'Avanzado', tamano: 30 },
+        { nombre: 'RxJS', iconoClase: 'stream', nivel: 'Medio', tamano: 30 }
       ]
     },
     {
       nombre: 'Backend Web',
       iconoClase: 'dns',
       tecnologias: [
-        { nombre: 'Node.js', iconoClase: 'terminal', nivel: 'Medio' },
-        { nombre: 'Express', iconoClase: 'api', nivel: 'Medio' },
-        { nombre: 'MongoDB', iconoClase: 'database', nivel: 'Básico' },
-        { nombre: 'PostgreSQL', iconoClase: 'table', nivel: 'Básico' }
+        { nombre: 'Node.js', iconoClase: 'terminal', nivel: 'Medio', tamano: 30 },
+        { nombre: 'Express', iconoClase: 'api', nivel: 'Medio', tamano: 30 },
+        { nombre: 'MongoDB', iconoClase: 'database', nivel: 'Básico', tamano: 30 },
+        { nombre: 'PostgreSQL', iconoClase: 'table', nivel: 'Básico', tamano: 30 }
       ]
     }
   ];
@@ -66,6 +68,19 @@ export class Tecnologies {
   }
 
   seleccionarSeccion(index: number) {
+    if (this.seccionActiva() === index) return;
+
     this.seccionActiva.set(index);
+    this.isAnimating.set(true);
+  }
+
+  finalizarAnimacion() {
+    this.isAnimating.set(false);
+  }
+
+  getBarrasNivel(nivel: string): number[] {
+    if (nivel === 'Avanzado') return [1, 2, 3];
+    if (nivel === 'Medio') return [1, 2];
+    return [1];
   }
 }

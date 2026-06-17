@@ -43,7 +43,7 @@
               <div class="boton-contenedor estatico">
                 <div class="bloque bloque-principal">
                   <div class="icono-tech tooltip-container" *ngFor="let tech of proyectos[currentIndex()].tecnologias">
-                    <span class="texto-contenido material-symbols-outlined">{{ tech.iconoClase }}</span>
+                    <img class="texto-contenido" [src]="tech.iconoClase" [alt]="tech.nombre" />
                     <span class="tooltip-text">{{ tech.nombre }}</span>
                   </div>
                 </div>
