@@ -90,7 +90,6 @@
           border-radius: 50%;
           border: 2.5px solid #424242;
           background-color: transparent;
-          
           transform: scale(0);
         }
       }
@@ -103,7 +102,6 @@
         margin-left: 1rem;
         border-radius: 3px;
         position: relative;
-        
         transform: scaleX(0);
         transform-origin: left center;
 
@@ -118,7 +116,6 @@
           border-radius: 50%;
           border: 2.5px solid #424242;
           background-color: transparent;
-          
           transform: translateY(-50%) scale(0);
         }
       }
@@ -130,50 +127,33 @@
   .nombre-wrapper {
     span {
       animation: aparecerTextoFijo 0.5s ease-out forwards;
-
-      &::before, &::after {
-        animation: aparecerScale 0.3s ease-out 0.5s forwards;
-      }
+      &::before, &::after { animation: aparecerScale 0.3s ease-out 0.5s forwards; }
     }
-
     .nombre-barra {
       animation: estirarEscalaX 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-
-      &::after {
-        animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 0.8s forwards;
-      }
+      &::after { animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 0.8s forwards; }
     }
-
     .nombre-barra-2 {
       animation: estirarEscalaX 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
-
-      &::after {
-        animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 1s forwards;
-      }
+      &::after { animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 1s forwards; }
     }
   }
 }
 
-@keyframes estirarEscalaX {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
+@keyframes estirarEscalaX { 
+    from { transform: scaleX(0); } to { transform: scaleX(1); } 
 }
 
-@keyframes aparecerTextoFijo {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes aparecerTextoFijo { 
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes aparecerScale {
-  from { transform: translateY(-50%) scale(0); }
-  to   { transform: translateY(-50%) scale(1); }
+@keyframes aparecerScale { 
+    from { transform: translateY(-50%) scale(0); } to { transform: translateY(-50%) scale(1); } 
 }
 
-@keyframes aparecerBolita {
-  from { transform: scale(0); }
-  to   { transform: scale(1); }
+@keyframes aparecerBolita { 
+    from { transform: scale(0); } to { transform: scale(1); } 
 }
 
 .contenedor-inferior {
@@ -203,18 +183,16 @@
   justify-content: space-between;
   padding: 1rem 1.5rem;
   box-sizing: border-box;
-  text-decoration: none;
-  box-shadow: 0px 0px 5px rgba(42, 42, 42, 0.3);
+  text-decoration: none !important; 
+  box-shadow: 0px 2px 5px rgba(42, 42, 42, 0.15);
   transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s ease;
 
   &::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
+    left: 0; top: 0; bottom: 0;
     width: 5px;
-    background: #4fc3f7;
+    background: #4fc3f7; 
     box-shadow: 0px 2px 5px rgba(42, 42, 42, 0.3);
   }
 
@@ -223,9 +201,7 @@
     box-shadow: 0px 4px 10px rgba(42, 42, 42, 0.25);
   }
 
-  &.fila-completa {
-    width: 100%;
-  }
+  &.fila-completa { width: 100%; }
 
   .card-info-izquierda {
     display: flex;
@@ -256,65 +232,86 @@
 
 .card-acciones {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding-right: 10px;
+  text-decoration: none !important;
+  a { text-decoration: none !important; }
 }
 
 .btn-accion-cuadrado {
-  width: 46px;
-  height: 46px;
-  background-color: var(--color-1);
+  width: 38px;
+  height: 38px;
+  background-color: #424242;
   border: none;
-  border-radius: 6px;
-  display: flex;
+  transform: rotate(45deg); 
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   padding: 0;
   outline: none;
-  transition: background-color 0.2s, transform 0.1s;
+  border-radius: 2px;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease;
+
+  span {
+    transform: rotate(-45deg); 
+    color: #f1f1f1;
+    font-size: 1.1rem;
+    display: block;
+    text-decoration: none !important;
+  }
 
   &:hover {
-    background-color: rgb(75, 145, 225);
-    
-    .icono-rombo {
-      background-color: #2a2c2e;
-    }
+    background-color: #2a2c2e;
+    span { color: #cfcfcf; }
   }
 }
 
-.btn-accion-alargado {
-  flex: 1;
-  max-width: 220px;
-  height: 46px;
-  background-color: var(--color-1);
-  border-radius: 6px;
-  display: flex;
+.rombo-redes {
+  width: 38px;
+  height: 38px;
+  background-color: #424242;
+  transform: rotate(45deg); 
+  display: inline-flex;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 12px;
-  box-sizing: border-box;
-  transition: background-color 0.2s;
-
-  .contacto-card:hover & {
-    background-color: rgb(75, 145, 225);
-  }
-}
-
-.icono-rombo {
-  width: 28px;
-  height: 28px;
-  background-color: var(--negro-1);
-  transform: rotate(45deg);
-  display: flex;
   justify-content: center;
-  align-items: center;
   border-radius: 2px;
-  transition: background-color 0.2s;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 
-  span, i {
-    transform: rotate(-45deg);
-    color: var(--blanco-1);
-    font-size: 1.1rem;
+  i {
+    transform: rotate(-45deg); 
+    font-size: 1.2rem;
+    display: block;
+    transition: color 0.3s ease;
+  }
+}
+
+.linkedb {
+  border: 3px solid rgb(75, 145, 225);
+  i { color: rgb(75, 145, 225); }
+}
+
+.contacto-card.linkedin:hover {
+  .linkedb {
+    border-color: rgb(50, 110, 185);
+    background-color: #2a2c2e;
+    i { color: rgb(50, 110, 185); }
+  }
+}
+
+/* GITHUB */
+.githubb {
+  border: 3px solid rgb(138, 107, 185);
+  i { color: rgb(138, 107, 185); }
+}
+
+.contacto-card.github:hover {
+  .githubb {
+    border-color: rgb(105, 75, 150);
+    background-color: #2a2c2e;
+    i { color: rgb(105, 75, 150); }
   }
 }
 
@@ -326,15 +323,11 @@
   .card-mitad {
     flex: 1;
   }
-
-  .github:hover .icono-rombo i { color: #6e5494; }
-  .linkedin:hover .icono-rombo i { color: #0077b5; }
 }
 
 .contacto-fila-curriculum {
   display: flex;
   width: 100%;
-  
   .card-mitad {
     width: calc(50% - 0.75rem); 
     flex-grow: 0;
@@ -342,13 +335,8 @@
 }
 
 @media (max-width: 768px) {
-  .contacto-fila-doble {
-    flex-direction: column;
-  }
-
-  .contacto-fila-curriculum .card-mitad {
-    width: 100%;
-  }
+  .contacto-fila-doble { flex-direction: column; }
+  .contacto-fila-curriculum .card-mitad { width: 100%; }
 
   .contacto-card {
     flex-direction: column;
@@ -361,17 +349,15 @@
       gap: 0.5rem;
     }
 
-    .divisor-vertical {
-      display: none;
-    }
+    .divisor-vertical { display: none; }
 
-    .card-acciones, .btn-accion-alargado {
+    .card-acciones, .rombo-redes {
       width: 100%;
       justify-content: center;
     }
     
-    .btn-accion-alargado {
-      justify-content: flex-end;
+    .rombo-redes {
+      margin-right: 0;
     }
   }
 }
