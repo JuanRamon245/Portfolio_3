@@ -4,12 +4,56 @@
   height: 100vh;
 }
 
+/* --- ANIMACIONES GLOBALES (En la raíz del archivo) --- */
+@keyframes estirarEscalaX { 
+  from { transform: scaleX(0); } 
+  to   { transform: scaleX(1); } 
+}
+
+@keyframes aparecerTextoFijo { 
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aparecerScale { 
+  from { transform: translateY(-50%) scale(0); } 
+  to   { transform: translateY(-50%) scale(1); } 
+}
+
+@keyframes aparecerBolita { 
+  from { transform: scale(0); } 
+  to   { transform: scale(1); } 
+}
+
+/* --- CONTENEDORES --- */
 .contenedor-global {
   display: flex;
   flex-direction: column;
   width: calc(100% - 8rem);
   height: calc(100% - 8rem);
   margin: 4rem;
+}
+
+/* CORRECCIÓN: Evento de activación global (Fuera de contenedor-superior) */
+.contenedor-global.visible {
+  .nombre-wrapper {
+    span {
+      animation: aparecerTextoFijo 0.5s ease-out forwards;
+      &::before, &::after { animation: aparecerScale 0.3s ease-out 0.5s forwards; }
+    }
+    .nombre-barra {
+      animation: estirarEscalaX 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      &::after { animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 0.8s forwards; }
+    }
+    .nombre-barra-2 {
+      animation: estirarEscalaX 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+      &::after { animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 1s forwards; }
+    }
+  }
+
+  /* Animación de la línea de GANG (Aparece fluidamente con un pequeño delay) */
+  .contenedor-inferior .contenedor-gang .linea-divisoria {
+    animation: estirarEscalaX 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+  }
 }
 
 .contenedor-superior {
@@ -38,6 +82,8 @@
         color: #424242;
         white-space: nowrap;
         z-index: 10;
+        opacity: 0;
+        transform: translateY(10px);
 
         &::before {
           content: '';
@@ -72,40 +118,47 @@
         border-right: 3px solid #424242;
         border-radius: 3px;
         position: relative;
+        box-shadow: inset -4px -4px 6px rgba(42, 42, 42, 0.2);
+        transform: scaleX(0); 
+        transform-origin: left center;
 
         &::after {
           content: '';
           position: absolute;
-          right: -6px;
+          right: -7.5px;
           top: -12px;
           width: 8px;
           height: 8px;
           border-radius: 50%;
           border: 2.5px solid #424242;
           background-color: transparent;
+          transform: scale(0);
         }
       }
 
       .nombre-barra-2 {
-        width: 85%;
+        width: 85%; 
         height: 2.5px;
         background-color: #424242;
         margin-top: 8px;
         margin-left: 1rem;
         border-radius: 3px;
         position: relative;
+        transform: scaleX(0);
+        transform-origin: left center;
 
         &::after {
           content: '';
           position: absolute;
           right: -12px;
           top: 50%;
-          transform: translateY(-50%);
+          margin-top: -7.5px;
           width: 8px;
           height: 8px;
           border-radius: 50%;
           border: 2.5px solid #424242;
           background-color: transparent;
+          transform: translateY(-50%) scale(0);
         }
       }
     }
@@ -149,47 +202,20 @@
         }
 
         &.corner-tl {
-          top: -2%;
-          left: -2%;
-
-          i {
-            width: 100%;
-            height: 100%;
-            clip-path: polygon(30% 30%, 20% 15%, 90% 25%, 100% 30%, 30% 30%, 30% 100%, 25% 90%, 15% 20%);
-          }
+          top: -2%; left: -2%;
+          i { width: 100%; height: 100%; clip-path: polygon(30% 30%, 20% 15%, 90% 25%, 100% 30%, 30% 30%, 30% 100%, 25% 90%, 15% 20%); }
         }
-
         &.corner-tr {
-          top: -2%;
-          right: -2%;
-
-          i {
-            width: 100%;
-            height: 100%;
-            clip-path: polygon(70% 30%, 85% 20%, 75% 90%, 70% 100%, 70% 30%, 0% 30%, 10% 25%, 80% 15%);
-          }
+          top: -2%; right: -2%;
+          i { width: 100%; height: 100%; clip-path: polygon(70% 30%, 85% 20%, 75% 90%, 70% 100%, 70% 30%, 0% 30%, 10% 25%, 80% 15%); }
         }
-
         &.corner-bl {
-          bottom: -2%;
-          left: -2%;
-
-          i {
-            width: 100%;
-            height: 100%;
-            clip-path: polygon(30% 70%, 15% 80%, 25% 10%, 30% 0%, 30% 70%, 100% 70%, 90% 75%, 20% 85%);
-          }
+          bottom: -2%; left: -2%;
+          i { width: 100%; height: 100%; clip-path: polygon(30% 70%, 15% 80%, 25% 10%, 30% 0%, 30% 70%, 100% 70%, 90% 75%, 20% 85%); }
         }
-
         &.corner-br {
-          bottom: -2%;
-          right: -2%;
-
-          i {
-            width: 100%;
-            height: 100%;
-            clip-path: polygon(70% 70%, 80% 85%, 10% 75%, 0% 70%, 70% 70%, 70% 0%, 75% 10%, 85% 80%);
-          }
+          bottom: -2%; right: -2%;
+          i { width: 100%; height: 100%; clip-path: polygon(70% 70%, 80% 85%, 10% 75%, 0% 70%, 70% 70%, 70% 0%, 75% 10%, 85% 80%); }
         }
       }
     }
@@ -222,6 +248,10 @@
       height: 3px;
       background-color: #424242;
       border-radius: 50px;
+      
+      /* NUEVO: Estado base para que crezca de izquierda a derecha */
+      transform: scaleX(0);
+      transform-origin: left center;
     }
   }
 

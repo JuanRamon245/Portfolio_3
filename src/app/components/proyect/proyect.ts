@@ -16,8 +16,8 @@ export class Proyect {
       iconoPrincipal: 'cloud',
       contenido: 'Plataforma de ventas online distribuida desarrollada con arquitectura de microservicios, asegurando alta disponibilidad...',
       tecnologias: [
-        { nombre: 'Java', iconoClase: '/logos/bricksLogo.png' }, 
-        { nombre: 'Docker', iconoClase: '/logos/androidLogo.png' }
+        { nombre: 'Java', iconoClase: '/logos/bricksLogo.png', tamano: 80  }, 
+        { nombre: 'Docker', iconoClase: '/logos/androidLogo.png', tamano: 30  }
       ],
       enlaces: [
         { url: 'https://github.com/...', iconoClase: 'code' },
@@ -29,8 +29,8 @@ export class Proyect {
       iconoPrincipal: 'cloud',
       contenido: 'Plataforma de ventas online distribuida desarrollada con arquitectura de microservicios, asegurando alta disponibilidad...',
       tecnologias: [
-        { nombre: 'Java', iconoClase: '/logos/androidLogo.png' }, 
-        { nombre: 'Docker', iconoClase: '/logos/androidLogo.png' }
+        { nombre: 'Java', iconoClase: '/logos/androidLogo.png', tamano: 30  }, 
+        { nombre: 'Docker', iconoClase: '/logos/androidLogo.png', tamano: 30  }
       ],
       enlaces: [
         { url: 'https://github.com/...', iconoClase: 'code' },
@@ -42,8 +42,8 @@ export class Proyect {
       iconoPrincipal: 'cloud',
       contenido: 'Plataforma de ventas online distribuida desarrollada con arquitectura de microservicios, asegurando alta disponibilidad...',
       tecnologias: [
-        { nombre: 'Java', iconoClase: '/logos/androidLogo.png' }, 
-        { nombre: 'Docker', iconoClase: '/logos/androidLogo.png' }
+        { nombre: 'Java', iconoClase: '/logos/androidLogo.png', tamano: 30  }, 
+        { nombre: 'Docker', iconoClase: '/logos/androidLogo.png', tamano: 30  }
       ],
       enlaces: [
         { url: 'https://github.com/...', iconoClase: 'code' },
@@ -58,8 +58,8 @@ export class Proyect {
       iconoPrincipal: 'cloud',
       contenido: 'Plataforma de ventas online distribuida desarrollada con arquitectura de microservicios, asegurando alta disponibilidad...',
       tecnologias: [
-        { nombre: 'Java', iconoClase: 'coffee' }, 
-        { nombre: 'Docker', iconoClase: 'view_in_ar' }
+        { nombre: 'Java', iconoClase: 'coffee', tamano: 30  }, 
+        { nombre: 'Docker', iconoClase: 'view_in_ar', tamano: 30  }
       ],
       enlaces: [
         { url: 'https://github.com/...', iconoClase: 'code' },
@@ -71,8 +71,8 @@ export class Proyect {
       iconoPrincipal: 'cloud',
       contenido: 'Plataforma de ventas online distribuida desarrollada con arquitectura de microservicios, asegurando alta disponibilidad...',
       tecnologias: [
-        { nombre: 'Java', iconoClase: 'coffee' }, 
-        { nombre: 'Docker', iconoClase: 'view_in_ar' }
+        { nombre: 'Java', iconoClase: 'coffee', tamano: 30  }, 
+        { nombre: 'Docker', iconoClase: 'view_in_ar', tamano: 30  }
       ],
       enlaces: [
         { url: 'https://github.com/...', iconoClase: 'code' },
@@ -84,8 +84,8 @@ export class Proyect {
       iconoPrincipal: 'cloud',
       contenido: 'Plataforma de ventas online distribuida desarrollada con arquitectura de microservicios, asegurando alta disponibilidad...',
       tecnologias: [
-        { nombre: 'Java', iconoClase: 'coffee' }, 
-        { nombre: 'Docker', iconoClase: 'view_in_ar' }
+        { nombre: 'Java', iconoClase: 'coffee', tamano: 30  }, 
+        { nombre: 'Docker', iconoClase: 'view_in_ar', tamano: 30  }
       ],
       enlaces: [
         { url: 'https://github.com/...', iconoClase: 'code' },
@@ -97,8 +97,8 @@ export class Proyect {
       iconoPrincipal: 'cloud',
       contenido: 'Plataforma de ventas online distribuida desarrollada con arquitectura de microservicios, asegurando alta disponibilidad...',
       tecnologias: [
-        { nombre: 'Java', iconoClase: 'coffee' }, 
-        { nombre: 'Docker', iconoClase: 'view_in_ar' }
+        { nombre: 'Java', iconoClase: 'coffee', tamano: 30  }, 
+        { nombre: 'Docker', iconoClase: 'view_in_ar', tamano: 30  }
       ],
       enlaces: [
         { url: 'https://github.com/...', iconoClase: 'code' },
@@ -110,8 +110,8 @@ export class Proyect {
       iconoPrincipal: 'cloud',
       contenido: 'Plataforma de ventas online distribuida desarrollada con arquitectura de microservicios, asegurando alta disponibilidad...',
       tecnologias: [
-        { nombre: 'Java', iconoClase: 'coffee' }, 
-        { nombre: 'Docker', iconoClase: 'view_in_ar' }
+        { nombre: 'Java', iconoClase: 'coffee', tamano: 30 }, 
+        { nombre: 'Docker', iconoClase: 'view_in_ar', tamano: 30  }
       ],
       enlaces: [
         { url: 'https://github.com/...', iconoClase: 'code' },
