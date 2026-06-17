@@ -1,2 +1,56 @@
-<p>tecnologies works!</p>
-<app-romb-button></app-romb-button>
+<div class="contenedor-global" [class.visible]="isIntersecting()">
+  
+  <div class="contenedor-superior">
+    <div class="contenedor-nombre">
+      <div class="nombre-wrapper">
+        <span>Tecnologías aprendidas</span>
+        <div class="nombre-barra"></div>
+        <div class="nombre-barra-2"></div>
+      </div>
+    </div>
+  </div>
+
+<div class="contenedor-inferior" *ngIf="secciones.length > 0">
+  
+  <div class="panel-lateral">
+    <div class="menu-contenedor">
+      <div class="menu-item" 
+           *ngFor="let seccion of secciones; let i = index"
+           [class.activo]="seccionActiva() === i"
+           (click)="seleccionarSeccion(i)">
+        
+        <div class="indicador-activo"></div>
+        
+        <div class="icono-rombo-pequeno">
+          <span class="material-symbols-outlined">{{ seccion.iconoClase }}</span>
+        </div>
+        <span class="menu-texto">{{ seccion.nombre }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-contenido">
+    <div class="grid-tecnologias">
+      
+      <div class="tech-card" *ngFor="let tech of secciones[seccionActiva()].tecnologias">
+        
+        <div class="badge-nivel">
+          <span>{{ tech.nivel }}</span>
+        </div>
+
+        <div class="centro-rombo">
+          <div class="rombo-interior">
+            <span class="material-symbols-outlined">{{ tech.iconoClase }}</span>
+          </div>
+        </div>
+
+        <div class="tech-footer">
+          <h4>{{ tech.nombre }}</h4>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+
+</div>
