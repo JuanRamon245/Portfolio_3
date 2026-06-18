@@ -43,7 +43,17 @@
           </div>
 
           <div class="bloque-descripcion">
-            <p>{{ hito.descripcion }}</p>
+            @for (linea of hito.descripcion; track $index) {
+              
+              @if (linea.startsWith('- ')) {
+                <div class="linea-lista">
+                  <div class="puntero-rombo"></div>
+                  <span>{{ linea.slice(2) }}</span> </div>
+              } @else {
+                <p>{{ linea }}</p>
+              }
+
+            }
           </div>
 
         </div>
