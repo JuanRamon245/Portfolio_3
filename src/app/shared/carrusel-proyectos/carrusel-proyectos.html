@@ -34,7 +34,6 @@
 
           <div class="tarjeta-contenido">
             @for (linea of proyectos[currentIndex()].contenido; track $index) {
-              
               @if (linea.startsWith('- ')) {
                 <div class="linea-lista-proyectos">
                   <div class="puntero-rombo-proyectos"></div>
@@ -69,10 +68,16 @@
             </div>
 
             <div class="enlaces-seccion">
-              <a *ngFor="let link of proyectos[currentIndex()].enlaces" [href]="link.url" target="_blank" class="icono-rombo enlace">
-                <span class="material-symbols-outlined">{{ link.iconoClase }}</span>
-              </a>
+              <div *ngFor="let link of proyectos[currentIndex()].enlaces" class="tooltip-container">
+                <a [href]="link.url" target="_blank" class="icono-rombo enlace">
+                  <span class="material-symbols-outlined">{{ link.iconoClase }}</span>
+                </a>
+                <span class="tooltip-text">
+                  {{ link.iconoClase === 'data_object' ? 'Ver código' : 'Visitar web' }}
+                </span>
+              </div>
             </div>
+
           </div>
         </div>
 

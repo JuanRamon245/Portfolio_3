@@ -56,8 +56,8 @@ export class Proyect {
         { nombre: 'Firebase', iconoClase: '/logos/firebaseLogo.png', tamano: 35 }
       ],
       enlaces: [
-        { url: 'https://github.com/JuanRamon245/AcortadorURLOnline', iconoClase: 'code' },
-        { url: 'https://juanramon245.github.io/AcortadorURLOnline/#', iconoClase: 'language' }
+        { url: 'https://github.com/JuanRamon245/AcortadorURLOnline', iconoClase: 'data_object' },
+        { url: 'https://juanramon245.github.io/AcortadorURLOnline/#', iconoClase: 'link' }
       ]
     },
     {
@@ -79,7 +79,7 @@ export class Proyect {
         { nombre: 'Asana', iconoClase: '/logos/asanaLogo.png', tamano: 45 }
       ],
       enlaces: [
-        { url: 'https://transportesdelivery.com', iconoClase: 'language' }
+        { url: 'https://transportesdelivery.com', iconoClase: 'link' }
       ]
     },
   ]);
@@ -103,7 +103,7 @@ export class Proyect {
         { nombre: 'Firebase', iconoClase: '/logos/firebaseLogo.png', tamano: 35 }
       ],
       enlaces: [
-        { url: 'https://github.com/JuanRamon245/Cocinegocios', iconoClase: 'code' }
+        { url: 'https://github.com/JuanRamon245/Cocinegocios', iconoClase: 'data_object' }
       ]
     },
     {
@@ -171,8 +171,8 @@ export class Proyect {
 
       ],
       enlaces: [
-        { url: 'https://github.com/JuanRamon245/PeliculasYSeries', iconoClase: 'code' },
-        { url: 'https://juanramon245.github.io/PeliculasYSeries/', iconoClase: 'language' }
+        { url: 'https://github.com/JuanRamon245/PeliculasYSeries', iconoClase: 'data_object' },
+        { url: 'https://juanramon245.github.io/PeliculasYSeries/', iconoClase: 'link' }
       ]
     },
     {
@@ -197,7 +197,7 @@ export class Proyect {
         { nombre: 'Visual Studio Code', iconoClase: '/logos/vscodeLogo.png', tamano: 35 },
       ],
       enlaces: [
-        { url: 'https://github.com/...', iconoClase: 'code' }
+        { url: 'https://github.com/...', iconoClase: 'data_object' }
       ]
     },
   ]);

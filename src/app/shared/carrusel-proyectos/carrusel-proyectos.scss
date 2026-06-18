@@ -91,7 +91,6 @@
           border-radius: 50%;
           border: 2.5px solid #424242;
           background-color: transparent;
-          
           transform: scale(0);
         }
       }
@@ -104,7 +103,6 @@
         margin-left: 1rem;
         border-radius: 3px;
         position: relative;
-        
         transform: scaleX(0);
         transform-origin: left center;
 
@@ -119,7 +117,6 @@
           border-radius: 50%;
           border: 2.5px solid #424242;
           background-color: transparent;
-          
           transform: translateY(-50%) scale(0);
         }
       }
@@ -131,51 +128,23 @@
   .nombre-wrapper {
     span {
       animation: aparecerTextoFijo 0.5s ease-out forwards;
-
-      &::before, &::after {
-        animation: aparecerScale 0.3s ease-out 0.5s forwards;
-      }
+      &::before, &::after { animation: aparecerScale 0.3s ease-out 0.5s forwards; }
     }
-
     .nombre-barra {
       animation: estirarEscalaX 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-
-      &::after {
-        animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 0.8s forwards;
-      }
+      &::after { animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 0.8s forwards; }
     }
-
     .nombre-barra-2 {
       animation: estirarEscalaX 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
-
-      &::after {
-        animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 1s forwards;
-      }
+      &::after { animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 1s forwards; }
     }
   }
 }
 
-@keyframes estirarEscalaX {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
-@keyframes aparecerTextoFijo {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes aparecerScale {
-  from { transform: translateY(-50%) scale(0); }
-  to   { transform: translateY(-50%) scale(1); }
-}
-
-@keyframes aparecerBolita {
-  from { transform: scale(0); }
-  to   { transform: scale(1); }
-}
+@keyframes estirarEscalaX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes aparecerTextoFijo { to { opacity: 1; transform: translateY(0); } }
+@keyframes aparecerScale { from { transform: translateY(-50%) scale(0); } to { transform: translateY(-50%) scale(1); } }
+@keyframes aparecerBolita { from { transform: scale(0); } to { transform: scale(1); } }
 
 .contenedor-inferior {
   width: 100%;
@@ -195,11 +164,7 @@
   padding: 2rem 1rem;
 
   &.bloqueado {
-    .flecha-btn,
-    .barra-progreso {
-      pointer-events: none;
-      cursor: default;
-    }
+    .flecha-btn, .barra-progreso { pointer-events: none; cursor: default; }
   }
 }
 
@@ -252,24 +217,21 @@
     }
 
     &.pulsado {
-      .pulse {
-        animation: pulsoClick 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-      }
+      .pulse { animation: pulsoClick 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
     }
   }
-
   &:hover .rombo-bg { background-color: #424242; }
 }
 
-@keyframes pulsoClick {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  100% {
+@keyframes pulsoClick { 
+  0% { 
+    transform: scale(1); 
+    opacity: 0.7; 
+  } 
+  100% { 
     transform: scale(1.5);
-    opacity: 0;
-  }
+    opacity: 0; 
+  } 
 }
 
 .tarjeta-carrusel {
@@ -284,11 +246,11 @@
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(42, 42, 42, 0.3);
   
-  &.deslizar-der {
-    animation: slideInDesdeDerecha 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  &.deslizar-der { 
+    animation: slideInDesdeDerecha 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
   }
 
-  &.deslizar-izq {
+  &.deslizar-izq { 
     animation: slideInDesdeIzquierda 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 }
@@ -298,25 +260,25 @@
     opacity: 0;
     transform: translateX(70px);
     filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-    filter: blur(0);
-  }
+  } 
+  100% { 
+    opacity: 1; 
+    transform: translateX(0); 
+    filter: blur(0); 
+  } 
 }
 
-@keyframes slideInDesdeIzquierda {
-  0% {
-    opacity: 0;
-    transform: translateX(-70px);
-    filter: blur(2px);
-  }
-  100% {
+@keyframes slideInDesdeIzquierda { 
+  0% { 
+    opacity: 0; 
+    transform: translateX(-70px); 
+    filter: blur(2px); 
+  } 
+  100% { 
     opacity: 1;
-    transform: translateX(0);
-    filter: blur(0);
-  }
+    transform: translateX(0); 
+    filter: blur(0); 
+  } 
 }
 
 .tarjeta-header {
@@ -376,20 +338,27 @@
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.2s;
-    &:hover { transform: rotate(45deg) scale(1.1); }
+
+    &:hover {
+      transform: rotate(45deg) scale(1.1);
+    }
   }
 }
 
 .divisor {
   border: none;
   border-top: 2px solid #424242;
-  margin: 1rem 0;
+  margin: 1rem 0; 
 }
 
 .tarjeta-contenido {
   flex: 1;
-  
-  p { margin: 0; color: #424242; line-height: 1.6; }
+
+  p {
+    margin: 0;
+    color: #424242;
+    line-height: 1.6;
+  }
 
   .parrafo-proyecto {
     margin: 0;
@@ -411,8 +380,7 @@
     padding-left: 0.5rem;
 
     .puntero-rombo-proyectos {
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       background-color: #4fc3f7;
       transform: rotate(45deg);
       flex-shrink: 0;
@@ -453,7 +421,7 @@
   padding: 0;
 
   .bloque::before {
-    background-color: #b0b0b0; 
+    background-color: #b0b0b0;
   }
 }
 
@@ -462,12 +430,12 @@
   height: 40px;
   background: transparent;
 
-  &::before {
+  &::before { 
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    inset: 0;
     border-radius: 2px;
-    transform: skewX(-20deg); 
+    transform: skewX(-20deg);
   }
 }
 
@@ -485,6 +453,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 40px; 
 }
 
 .texto-contenido {
@@ -499,6 +468,9 @@
 
 .tooltip-container {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .tooltip-text {
     visibility: hidden;
@@ -506,17 +478,19 @@
     color: #f1f1f1;
     text-align: center;
     border-radius: 4px;
-    padding: 4px 8px;
+    padding: 5px 10px;
     position: absolute;
     z-index: 10;
-    bottom: 120%;
+    bottom: 100%;
+    margin-bottom: 12px; 
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.25s ease;
     font-size: 0.8rem;
     font-family: sans-serif;
     white-space: nowrap;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 
     &::after {
       content: "";
@@ -540,29 +514,20 @@
   display: flex;
   gap: 8px;
   width: 100%;
-  max-width: 500px; 
+  max-width: 500px;
   justify-content: center;
 }
 
 .barra-progreso {
-  flex: 1; 
-  max-width: 50px; 
-  height: 8px; 
-  cursor: pointer;
-  
+  flex: 1; max-width: 50px; height: 8px; cursor: pointer;
   transform: skewX(-20deg);
   border-radius: 2px;
   box-shadow: 0px 1px 4px rgba(42, 42, 42, 0.25);
-
   background: linear-gradient(to right, #4fc3f7 50%, transparent 50%);
   background-size: 200% 100%;
   background-position: 100% 0%;
   background-color: #424242;
-  
-  transition: 
-    background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, box-shadow 0.3s ease;
 
   &.activa {
     background-position: 0% 0%;
