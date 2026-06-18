@@ -4,14 +4,14 @@ import { LinkTecnologia } from "../link-tecnologia/link-tecnologia";
 export class Proyectos {
   titulo: string;
   iconoPrincipal: string;
-  contenido: string;
+  contenido: string[];
   tecnologias: IconoTecnologia[];
   enlaces: LinkTecnologia[];
 
   constructor(
     titulo: string,
     iconoPrincipal: string,
-    contenido: string,
+    contenido: string[],
     tecnologias: IconoTecnologia[],
     enlaces: LinkTecnologia[]
   ) {

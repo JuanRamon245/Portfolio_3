@@ -33,7 +33,17 @@
           <hr class="divisor">
 
           <div class="tarjeta-contenido">
-            <p>{{ proyectos[currentIndex()].contenido }}</p>
+            @for (linea of proyectos[currentIndex()].contenido; track $index) {
+              
+              @if (linea.startsWith('- ')) {
+                <div class="linea-lista-proyectos">
+                  <div class="puntero-rombo-proyectos"></div>
+                  <span>{{ linea.slice(2) }}</span>
+                </div>
+              } @else {
+                <p class="parrafo-proyecto">{{ linea }}</p>
+              }
+            }
           </div>
 
           <hr class="divisor">
