@@ -35,23 +35,17 @@ export class App {
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
-
-      const links = document.querySelectorAll('.nav-link');
       
-      links.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const targetId = link.getAttribute('href');
-          if (targetId) {
-            const targetElement = document.querySelector(targetId) as HTMLElement;
-            
-            if (targetElement) {
-              lenis.scrollTo(targetElement, {
-                immediate: false,
-                duration: 1.4
-              });
-            }
-          }
-        });
+      window.addEventListener('lenis-scroll', (e: any) => {
+        const targetId = e.detail.targetId;
+        const targetElement = document.querySelector(targetId) as HTMLElement;
+        
+        if (targetElement) {
+          lenis.scrollTo(targetElement, {
+            immediate: false,
+            duration: 1.4
+          });
+        }
       });
     });
   }
