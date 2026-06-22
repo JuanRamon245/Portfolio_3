@@ -388,14 +388,40 @@
     align-items: center;
 
     .rombo-interior {
-      width: 80px; height: 80px;
-      background-color: #424242;
+      width: 80px; 
+      height: 80px;
+      background-color: #f1f1f1;
+      border: 2px solid #424242;
       transform: rotate(45deg);
-      display: flex; justify-content: center; align-items: center;
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background-color: #424242;
+        clip-path: polygon(0 0, 5% 0, 59% 50%, 5% 100%, 0 100%, 50% 50%);
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(-45deg) translateX(-65px) scaleX(-1);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(-45deg) translateX(65px);
+      }
 
       .tech-img {
         transform: rotate(-45deg);
         object-fit: contain;
+        z-index: 2;
       }
     }
   }
