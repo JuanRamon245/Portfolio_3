@@ -28,11 +28,10 @@
   margin-bottom: 3rem;
 
   .contenedor-nombre {
-    width: 80%;
-    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     .nombre-wrapper {
       position: relative;
@@ -336,12 +335,21 @@
     margin-top: 20px;
     margin-bottom: 2.5rem;
 
-    .contenedor-nombre .nombre-wrapper {
-      width: 85%;
-      margin-left: 1.5rem; 
-      span { font-size: 2.2rem; left: calc(0.7em + 1rem) !important; }
-      .nombre-barra { height: calc(1.5em + 1rem) !important; }
-      .nombre-barra-2 { height: 1.5px !important; }
+    .contenedor-nombre {
+      width: 100% !important;
+      justify-content: center;
+
+      .nombre-wrapper {
+        width: 85%;
+        margin-left: 0;
+        
+        span { 
+          font-size: 3.2rem; 
+          left: calc(0.7em + 1rem) !important; 
+        }
+        .nombre-barra { height: calc(1em + 1rem) !important; }
+        .nombre-barra-2 { height: 1.5px !important; }
+      }
     }
   }
 
@@ -413,14 +421,50 @@
     margin: 3rem 1rem 3rem 1rem;
   }
 
-  .contenedor-superior .contenedor-nombre {
-    width: 100% !important;
-    .nombre-wrapper {
-      width: calc(100% - 1.5rem) !important;
-      margin-left: 1.5rem !important;
-      span { font-size: 5.5vw !important; top: -0.70em; left: 1.5rem; }
-      .nombre-barra { height: 1.4em !important; }
-      .nombre-barra-2 { margin-top: 15px !important; }
+  .contenedor-superior {
+    margin-top: 20px;
+    margin-bottom: 2rem;
+
+    .contenedor-nombre {
+      width: 100% !important;
+      display: flex;
+      justify-content: center !important;
+      
+      .nombre-wrapper {
+        width: calc(100% - 1.5rem) !important;
+        margin-left: 1rem !important;
+
+        span { 
+          font-size: 7.5vw !important; 
+          top: -0.70em; 
+          left: 1rem; 
+          position: absolute;
+          transform: none; 
+          white-space: nowrap;
+          opacity: 0;
+
+          &::before {
+            width: 1.8rem;
+            height: 1.8rem;
+            left: -2.7rem;
+          }
+
+          &::after {
+            width: 0.65rem;
+            height: 0.65rem;
+            left: calc(-2.7rem + 0.55rem);
+          }
+        }
+
+        .nombre-barra { 
+          height: 3.4vh !important; 
+          transform-origin: left center;
+        }
+
+        .nombre-barra-2 { 
+          margin-top: 15px !important; 
+        }
+      }
     }
   }
 
@@ -455,7 +499,6 @@
 }
 
 @keyframes estirarEscalaX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes abrirTextoFijo { to { opacity: 1; transform: translateY(0); } }
 @keyframes abrirTextoFijo { to { opacity: 1; transform: translateY(0); } }
 @keyframes aparecerScale { from { transform: translateY(-50%) scale(0); } to { transform: translateY(-50%) scale(1); } }
 @keyframes aparecerBolita { from { transform: scale(0); } to { transform: scale(1); } }
