@@ -10,6 +10,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 export class Navbar implements OnInit {
   activeSection: string = 'inicio';
+  menuOpen: boolean = false;
   private sections = ['inicio', 'sobre-mi', 'proyectos', 'tecnologias', 'contacto'];
   private isBrowser: boolean;
   private isScrollingProgrammatically = false;
@@ -17,6 +18,20 @@ export class Navbar implements OnInit {
 
   constructor(@Inject(PLATFORM_ID) platformId: object) {
     this.isBrowser = isPlatformBrowser(platformId);
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+    if (this.isBrowser) {
+      document.body.style.overflow = this.menuOpen ? 'hidden' : '';
+    }
+  }
+  
+  closeMenu() {
+    this.menuOpen = false;
+    if (this.isBrowser) {
+      document.body.style.overflow = '';
+    }
   }
 
   ngOnInit() {

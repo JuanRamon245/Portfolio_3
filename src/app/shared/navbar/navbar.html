@@ -9,5 +9,24 @@
     </ul>
     <div class="nav-line"></div>
     <div class="nav-line-low"></div>
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu" [class.open]="menuOpen" (click)="closeMenu()">
+    <nav class="mobile-nav" (click)="$event.stopPropagation()">
+      <div class="mobile-nav-line"></div>
+      <ul>
+        <li><a href="#inicio" class="mobile-link" [class.active]="isActive('inicio')" (click)="scrollTo('inicio', $event); closeMenu()">Presentación</a></li>
+        <li><a href="#sobre-mi" class="mobile-link" [class.active]="isActive('sobre-mi')" (click)="scrollTo('sobre-mi', $event); closeMenu()">Trayectoria</a></li>
+        <li><a href="#proyectos" class="mobile-link" [class.active]="isActive('proyectos')" (click)="scrollTo('proyectos', $event); closeMenu()">Proyectos</a></li>
+        <li><a href="#tecnologias" class="mobile-link" [class.active]="isActive('tecnologias')" (click)="scrollTo('tecnologias', $event); closeMenu()">Tecnologías</a></li>
+        <li><a href="#contacto" class="mobile-link" [class.active]="isActive('contacto')" (click)="scrollTo('contacto', $event); closeMenu()">Contacto</a></li>
+      </ul>
+      <div class="mobile-nav-line"></div>
+    </nav>
+  </div>
 </header>

@@ -36,10 +36,12 @@ export class App {
       }
       requestAnimationFrame(raf);
 
-      const links = document.querySelectorAll('.nav-link');
+      const links = document.querySelectorAll('.nav-link, .mobile-link');
       
       links.forEach(link => {
         link.addEventListener('click', (e) => {
+          e.preventDefault();
+          
           const targetId = link.getAttribute('href');
           if (targetId) {
             const targetElement = document.querySelector(targetId) as HTMLElement;
