@@ -1,12 +1,4 @@
-<header [class.menu-abierto]="isMenuOpen">
-  <button class="menu-toggle" (click)="toggleMenu()" aria-label="Abrir menú">
-    <div class="linea-hamburguesa"></div>
-    <div class="linea-hamburguesa"></div>
-    <div class="linea-hamburguesa"></div>
-  </button>
-
-  <div class="nav-overlay" (click)="toggleMenu()"></div>
-
+<header>
   <nav class="navbar">
     <ul class="nav-links">
       <li><a href="#inicio" class="nav-link" [class.active]="isActive('inicio')" (click)="scrollTo('inicio', $event)">Presentación</a></li>

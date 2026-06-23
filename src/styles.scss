@@ -33,15 +33,3 @@ body, html {
   overflow-x: hidden;
   scroll-behavior: auto !important;
 }
-
-html:has(header.menu-abierto),
-body:has(header.menu-abierto) {
-  overflow: hidden !important;
-  height: 100vh !important;
-}
-
-header.menu-abierto ~ main {
-  filter: grayscale(0.2);
-  pointer-events: none;
-  contain: paint;
-}
