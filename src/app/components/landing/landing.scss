@@ -1,7 +1,17 @@
 :host {
   display: block;
   width: 100%;
-  height: 110vh;
+  height: 100vh;
+  box-sizing: border-box;
+
+  @media (max-width: 1025px) {
+    height: auto;
+    min-height: calc(100vh - 120px);
+  }
+  @media (max-width: 769px) {
+    height: auto;
+    min-height: calc(100vh - 60px);
+  }
 }
 
 @keyframes estirarEscalaX { 
@@ -273,6 +283,162 @@
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+}
+
+@media (max-width: 1025px) {
+  .contenedor-global {
+    width: calc(100% - 4rem);
+    height: auto;
+    margin: 2rem 2rem 4rem 2rem;
+  }
+
+  .contenedor-superior {
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 3rem;
+
+    .contenedor-nombre {
+      width: 90% !important;
+      .nombre-wrapper {
+        width: 85%;
+        margin-left: 1.5rem; 
+
+        span {
+          font-size: 2.2rem;
+          left: calc(0.7em + 1rem) !important;
+        }
+
+        .nombre-barra {
+          height: calc(1.5em + 1rem) !important;
+        }
+
+        .nombre-barra-2 {
+          height: 1.5px !important;
+        }
+      }
+    }
+    
+    .contenedor-imagen {
+      width: 30% !important;
+      margin-bottom: 2rem;
+      .frame { 
+        width: 95% !important;
+      }
+    }
+  }
+
+  .contenedor-inferior {
+    height: auto;
+    margin-top: 2rem !important;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    
+    .contenedor-gang {
+      height: auto;
+      margin-bottom: 1.5rem;
+      span { font-size: 2rem !important; margin-left: 0.5rem; }
+    }
+    .contenedor-informacion {
+      height: auto;
+      padding-right: 0;
+      overflow-y: visible;
+      span { font-size: 1.25rem; }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .contenedor-global {
+    width: calc(100% - 2rem);
+    margin: 3rem 1rem 3rem 1rem;
+    height: auto;
+  }
+
+  .contenedor-superior {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 2rem;
+
+    .contenedor-imagen {
+      width: 100% !important;
+      .frame { width: 180px !important; }
+    }
+
+    .contenedor-nombre {
+      width: 100% !important;
+      margin-top: 0;
+      display: flex;
+      justify-content: flex-end;
+      
+      .nombre-wrapper {
+        width: calc(100% - 1.5rem) !important;
+        margin-left: 1.5rem !important;
+
+        span {
+          position: absolute;
+          top: -0.70em; 
+          left: 1.5rem;
+          transform: none; 
+          font-size: 5.5vw !important;
+          white-space: nowrap;
+          opacity: 0;
+
+          &::before {
+            width: 1.8rem;
+            height: 1.8rem;
+            left: -2.7rem;
+          }
+
+          &::after {
+            width: 0.65rem;
+            height: 0.65rem;
+            left: calc(-2.7rem + 0.55rem);
+          }
+        }
+
+        .nombre-barra {
+          width: 100%;
+          height: 1.4em !important;
+          transform-origin: left center;
+        }
+
+        .nombre-barra-2 {
+          display: block;
+          width: 80%;
+          height: 1.5px;
+          margin-top: 15px !important;
+        }
+      }
+    }
+  }
+  
+  .contenedor-global.visible .nombre-wrapper span {
+    animation: aparecerTextoFijo 0.5s ease-out forwards;
+  }
+
+  .contenedor-inferior {
+    margin-top: 0.5rem !important;
+    width: 100% !important;
+    margin: 0px !important;
+    padding-inline: 10px !important;
+    .contenedor-gang {
+      span {
+        font-size: 1.3rem;
+        white-space: normal;
+        display: block;
+        text-align: center;
+        margin-left: 0;
+      }
+      .linea-divisoria { width: 100%; bottom: -0.5rem; left: 0; }
+    }
+    .contenedor-informacion {
+      margin-top: 1.5rem;
+      span { font-size: 1.05rem; text-align: justify; }
     }
   }
 }

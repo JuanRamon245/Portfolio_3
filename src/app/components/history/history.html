@@ -11,7 +11,7 @@
   </div>
 
   <div class="contenedor-inferior">
-    <div class="timeline-izquierda">
+    <div class="timeline-contenedor">
       <div class="wrapper-botones">
         @for (item of hitos(); track item.id) {
           <div class="nodo-timeline">
@@ -44,15 +44,14 @@
 
           <div class="bloque-descripcion">
             @for (linea of hito.descripcion; track $index) {
-              
               @if (linea.startsWith('- ')) {
                 <div class="linea-lista">
                   <div class="puntero-rombo"></div>
-                  <span>{{ linea.slice(2) }}</span> </div>
+                  <span>{{ linea.slice(2) }}</span>
+                </div>
               } @else {
                 <p>{{ linea }}</p>
               }
-
             }
           </div>
 

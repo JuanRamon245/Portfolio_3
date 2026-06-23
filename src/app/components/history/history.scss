@@ -4,6 +4,13 @@
   min-height: 100vh;
   height: auto;
   box-sizing: border-box;
+
+  @media (max-width: 1025px) {
+    min-height: calc(100vh - 120px);
+  }
+  @media (max-width: 769px) {
+    min-height: calc(100vh - 60px);
+  }
 }
 
 .contenedor-global {
@@ -90,7 +97,6 @@
           border-radius: 50%;
           border: 2.5px solid #424242;
           background-color: transparent;
-          
           transform: scale(0);
         }
       }
@@ -103,7 +109,6 @@
         margin-left: 1rem;
         border-radius: 3px;
         position: relative;
-        
         transform: scaleX(0);
         transform-origin: left center;
 
@@ -118,7 +123,6 @@
           border-radius: 50%;
           border: 2.5px solid #424242;
           background-color: transparent;
-          
           transform: translateY(-50%) scale(0);
         }
       }
@@ -129,92 +133,16 @@
 .contenedor-global.visible {
   .nombre-wrapper {
     span {
-      animation: aparecerTextoFijo 0.5s ease-out forwards;
-
-      &::before, &::after {
-        animation: aparecerScale 0.3s ease-out 0.5s forwards;
-      }
+      animation: abrirTextoFijo 0.5s ease-out forwards;
+      &::before, &::after { animation: aparecerScale 0.3s ease-out 0.5s forwards; }
     }
-
     .nombre-barra {
       animation: estirarEscalaX 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-
-      &::after {
-        animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 0.8s forwards;
-      }
+      &::after { animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 0.8s forwards; }
     }
-
     .nombre-barra-2 {
       animation: estirarEscalaX 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
-
-      &::after {
-        animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 1s forwards;
-      }
-    }
-  }
-}
-
-@keyframes estirarEscalaX {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
-@keyframes aparecerTextoFijo {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes aparecerScale {
-  from { transform: translateY(-50%) scale(0); }
-  to   { transform: translateY(-50%) scale(1); }
-}
-
-@keyframes aparecerBolita {
-  from { transform: scale(0); }
-  to   { transform: scale(1); }
-}
-
-.timeline-izquierda {
-  width: 10%;
-  min-width: 80px;
-  display: flex;
-  justify-content: center;
-
-  .wrapper-botones {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    padding: 50px 0;
-    width: 100%;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 5px;
-      background: linear-gradient(to bottom, 
-        transparent 0px, 
-        #424242 48px, 
-        #424242 calc(100% - 48px),
-        transparent 100%
-      );
-      z-index: 1;
-    }
-
-    .nodo-timeline {
-      position: relative;
-      z-index: 2;
-      height: 3rem;
-      margin-left: 0;
-      display: flex;
-      align-items: center;
+      &::after { animation: aparecerBolita 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.575) 1s forwards; }
     }
   }
 }
@@ -226,8 +154,48 @@
   height: auto;
 }
 
+.timeline-contenedor {
+  width: 15%;
+  min-width: 90px;
+  display: flex;
+  justify-content: center;
+
+  .wrapper-botones {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 0;
+    width: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 5px;
+      background: linear-gradient(to bottom, 
+        transparent 0px, 
+        #424242 54px, 
+        #424242 calc(100% - 54px),
+        transparent 100%
+      );
+      z-index: 1;
+    }
+
+    .nodo-timeline {
+      position: relative;
+      z-index: 2;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
 .contenido-derecha {
-  width: 90%;
+  width: 85%;
   padding-left: 2rem;
   display: flex;
   align-items: flex-start;
@@ -256,21 +224,17 @@
       &::before {
         content: '';
         position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 5px;
+        left: 0; top: 0; bottom: 0; width: 5px;
         background: linear-gradient(to bottom, #4fc3f7 50%, #424242 50%);
         background-size: 100% 200%;
         background-position: 0% 100%;
         animation: vaciadoLiquido 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        box-shadow: 0px 2px 5px rgba(42, 42, 42, 0.3);
       }
 
       h2 {
         margin: 0;
         font-weight: 700;
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: #424242;
         opacity: 0;
         animation: difuminadoTexto 0.6s ease-out 0.2s forwards;
@@ -279,15 +243,12 @@
 
     .bloque-fecha {
       position: absolute;
-      top: 0rem;
+      top: 0; right: -1rem;
       transform: translateY(-50%);
-      right: -1rem;
       background-color: #424242;
       padding: 0.6rem 3rem 0.66rem 1.4rem;
       clip-path: polygon(0 0, 0 100%, 82% 100%, 88% 50%, 82% 0);
       z-index: 5;
-      display: flex;
-      align-items: center;
       border-radius: 5px;
 
       span {
@@ -296,7 +257,6 @@
         font-size: 1rem;
         letter-spacing: 1px;
         white-space: nowrap;
-
         opacity: 0;
         animation: difuminadoTexto 0.5s ease-out forwards;
       }
@@ -304,41 +264,23 @@
 
     .extension {
       position: absolute;
-      top: 0;
+      top: 0; right: -1rem;
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 50% 50%);
       background-color: #424242;
       pointer-events: none;
       z-index: 4;
-      right: -1rem; 
       transform: translateY(-50%) scaleX(0.2);
       transform-origin: left center;
     }
 
-    .ext-1 {
-      width: 2rem;
-      height: 2.5rem;
-      opacity: 0.8;
-      animation: estirarFlecha1 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
-    }
-
-    .ext-2 {
-      width: 1.8rem;
-      height: 2.5rem;
-      opacity: 0.6;
-      animation: estirarFlecha2 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.15s forwards;
-    }
-
-    .ext-3 {
-      width: 1.6rem;
-      height: 2.5rem;
-      opacity: 0.4;
-      animation: estirarFlecha3 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
-    }
+    .ext-1 { width: 2rem; height: 2.5rem; opacity: 0.8; animation: estirarFlecha1 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards; }
+    .ext-2 { width: 1.8rem; height: 2.5rem; opacity: 0.6; animation: estirarFlecha2 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.15s forwards; }
+    .ext-3 { width: 1.6rem; height: 2.5rem; opacity: 0.4; animation: estirarFlecha3 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards; }
   }
 
   .bloque-descripcion {
     width: 100%;
-    min-height: 16rem;
+    min-height: 12rem;
     background-color: #f7f7f7;
     padding: 2rem;
     border-radius: 4px;
@@ -347,17 +289,13 @@
     box-shadow: 0px 0px 5px rgba(42, 42, 42, 0.3);
 
     p {
-      margin: 0;
-      margin-bottom: 1.2rem;
-      font-size: 1.2rem;
-      line-height: 1.8;
+      margin: 0 0 1.2rem 0;
+      font-size: 1.15rem;
+      line-height: 1.7;
       color: #424242;
       opacity: 0;
       animation: difuminadoTexto 0.6s ease-out 0.3s forwards;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      &:last-child { margin-bottom: 0; }
     }
 
     .linea-lista {
@@ -375,59 +313,154 @@
         background-color: #4fc3f7;
         transform: rotate(45deg);
         flex-shrink: 0;
-        margin-top: 0.75rem; 
+        margin-top: 0.6rem; 
       }
 
       span {
-        font-size: 1.2rem;
-        line-height: 1.6;
+        font-size: 1.15rem;
+        line-height: 1.5;
         color: #424242;
       }
-      
-      &:last-of-type {
-        margin-bottom: 1.5rem;
-      }
+      &:last-of-type { margin-bottom: 1.2rem; }
     }
   }
 }
 
-@keyframes vaciadoLiquido {
-  0% {
-    background-position: 0% 100%;
+@media (max-width: 1025px) {
+  .contenedor-global {
+    width: calc(100% - 4rem);
+    margin: 2rem 2rem 4rem 2rem;
   }
-  100% {
-    background-position: 0% 0%;
+
+  .contenedor-superior {
+    margin-top: 20px;
+    margin-bottom: 2.5rem;
+
+    .contenedor-nombre .nombre-wrapper {
+      width: 85%;
+      margin-left: 1.5rem; 
+      span { font-size: 2.2rem; left: calc(0.7em + 1rem) !important; }
+      .nombre-barra { height: calc(1.5em + 1rem) !important; }
+      .nombre-barra-2 { height: 1.5px !important; }
+    }
+  }
+
+  .contenedor-inferior {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .timeline-contenedor {
+    width: 100%;
+    height: 5rem;
+    overflow-x: auto; 
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+
+    background-image: linear-gradient(to right, 
+      transparent 0px, 
+      #424242 40px, 
+      #424242 calc(100% - 40px), 
+      transparent 100%
+    );
+    background-size: 100% 5px;
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    .wrapper-botones {
+      display: flex;
+      flex-direction: row; 
+      justify-content: flex-start; 
+      align-items: center;
+      gap: 30px;          
+      padding: 0 40px;
+      height: 5rem;
+      width: max-content; 
+      min-width: 100%;
+      box-sizing: border-box;
+      background: transparent;
+
+      &::before {
+        display: none;
+      }
+
+      .nodo-timeline {
+        position: relative;
+        z-index: 2; 
+        height: auto;
+        width: auto;
+      }
+    }
+  }
+
+  .contenido-derecha {
+    width: 100%;
+    padding-left: 0;
+
+    .bloque-titulo-wrapper {
+      width: calc(100% - 4.5rem); 
+      .bloque-titulo h2 { font-size: 1.5rem; }
+      .bloque-fecha { right: -1rem; }
+      .extension { display: block; } 
+    }
   }
 }
 
-@keyframes estirarFlecha1 {
-  to {
-    right: -1.4rem;
-    transform: translateY(-50%) scaleX(1);
+@media (max-width: 769px) {
+  .contenedor-global {
+    width: calc(100% - 2rem);
+    margin: 3rem 1rem 3rem 1rem;
+  }
+
+  .contenedor-superior .contenedor-nombre {
+    width: 100% !important;
+    .nombre-wrapper {
+      width: calc(100% - 1.5rem) !important;
+      margin-left: 1.5rem !important;
+      span { font-size: 5.5vw !important; top: -0.70em; left: 1.5rem; }
+      .nombre-barra { height: 1.4em !important; }
+      .nombre-barra-2 { margin-top: 15px !important; }
+    }
+  }
+
+  .contenido-derecha .bloque-titulo-wrapper {
+    display: block; 
+    width: calc(100% - 4.5rem); 
+
+    .bloque-titulo {
+      padding: 1.2rem 1.5rem;
+      h2 { font-size: 1.2rem; padding-top: 0; }
+    }
+
+    .bloque-fecha {
+      position: absolute;
+      top: 0;
+      right: -1rem;
+      left: auto;
+      padding: 0.4rem 2.2rem 0.45rem 1rem;
+      clip-path: polygon(0 0, 0 100%, 82% 100%, 88% 50%, 82% 0);
+      border-radius: 5px;
+
+      span { font-size: 0.85rem; }
+    }
+
+    .ext-1, .ext-2, .ext-3 { height: 2rem; }
+  }
+
+  .contenido-derecha .bloque-descripcion {
+    padding: 1.2rem;
+    p, .linea-lista span { font-size: 1.05rem; }
   }
 }
 
-@keyframes estirarFlecha2 {
-  to {
-    right: -2.8rem;
-    transform: translateY(-50%) scaleX(1);
-  }
-}
-
-@keyframes estirarFlecha3 {
-  to {
-    right: -4.2rem;
-    transform: translateY(-50%) scaleX(1);
-  }
-}
-
-@keyframes difuminadoTexto {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+@keyframes estirarEscalaX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes abrirTextoFijo { to { opacity: 1; transform: translateY(0); } }
+@keyframes abrirTextoFijo { to { opacity: 1; transform: translateY(0); } }
+@keyframes aparecerScale { from { transform: translateY(-50%) scale(0); } to { transform: translateY(-50%) scale(1); } }
+@keyframes aparecerBolita { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes vaciadoLiquido { 0% { background-position: 0% 100%; } 100% { background-position: 0% 0%; } }
+@keyframes estirarFlecha1 { to { right: -1.4rem; transform: translateY(-50%) scaleX(1); } }
+@keyframes estirarFlecha2 { to { right: -2.8rem; transform: translateY(-50%) scaleX(1); } }
+@keyframes estirarFlecha3 { to { right: -4.2rem; transform: translateY(-50%) scaleX(1); } }
+@keyframes difuminadoTexto { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
