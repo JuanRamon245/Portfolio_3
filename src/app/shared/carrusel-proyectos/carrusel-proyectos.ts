@@ -15,6 +15,8 @@ export class CarruselProyectos {
 
   public currentIndex = signal<number>(0);
   public isIntersecting = signal<boolean>(false);
+  public isExiting = signal<boolean>(false);
+  private lastScrollY = 0;
   private observer: IntersectionObserver | null = null;
 
   public animandoIzq = signal<boolean>(false);
@@ -31,12 +33,22 @@ export class CarruselProyectos {
     if (isPlatformBrowser(this.platformId)) {
       this.observer = new IntersectionObserver(
         ([entry]) => {
+          const currentScrollY = window.scrollY;
+          const scrollingDown = currentScrollY > this.lastScrollY;
+          this.lastScrollY = currentScrollY;
+
           if (entry.isIntersecting) {
+            this.isExiting.set(false);
             this.isIntersecting.set(true);
-            this.observer?.disconnect(); 
+          } else if (this.isIntersecting()) {
+            this.isExiting.set(scrollingDown);
+            this.isIntersecting.set(false);
           }
         },
-        { threshold: 0.2 }
+        {
+          threshold: [0.05, 0.15],
+          rootMargin: '0px'
+        }
       );
       this.observer.observe(this.el.nativeElement);
     }

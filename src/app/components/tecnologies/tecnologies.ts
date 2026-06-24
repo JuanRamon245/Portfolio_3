@@ -11,6 +11,8 @@ import { SeccionTecnologias } from '../../shared/models/seccion-tecnologias/secc
 })
 export class Tecnologies {
   public isIntersecting = signal<boolean>(false);
+  public isExiting = signal<boolean>(false);
+  private lastScrollY = 0;
   private observer: IntersectionObserver | null = null;
 
   public seccionActiva = signal<number>(0);
@@ -104,13 +106,30 @@ export class Tecnologies {
     if (isPlatformBrowser(this.platformId)) {
       this.observer = new IntersectionObserver(
         ([entry]) => {
+      //     if (entry.isIntersecting) {
+      //       this.isIntersecting.set(true);
+      //       this.observer?.disconnect(); 
+      //     }
+      //   },
+      //   {
+      //     threshold: 0.2 
+      //   }
+      // );
+          const currentScrollY = window.scrollY;
+          const scrollingDown = currentScrollY > this.lastScrollY;
+          this.lastScrollY = currentScrollY;
+
           if (entry.isIntersecting) {
+            this.isExiting.set(false);
             this.isIntersecting.set(true);
-            this.observer?.disconnect(); 
+          } else if (this.isIntersecting()) {
+            this.isExiting.set(scrollingDown);
+            this.isIntersecting.set(false);
           }
         },
         {
-          threshold: 0.2 
+          threshold: [0.05, 0.15],
+          rootMargin: '0px'
         }
       );
 
