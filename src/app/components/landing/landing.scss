@@ -329,11 +329,11 @@
     }
     
     .contenedor-imagen {
-      width: 100% !important; /* 70% + 30% = 100% perfecto, ya no rompe el flujo */
+      width: 100% !important;
       margin-bottom: 0;
       
       .frame { 
-        width: 15rem !important; /* Escalado para que encaje bien en el 30% del espacio */
+        width: 15rem !important;
       }
     }
   }
@@ -457,7 +457,7 @@
     margin-top: 0.5rem !important;
     width: 100% !important;
     margin: 0px !important;
-    padding-inline: 10px !important;
+    padding-inline: 5px !important;
     .contenedor-gang {
       span {
         font-size: 1.3rem;

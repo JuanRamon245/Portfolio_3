@@ -24,14 +24,14 @@ export class Proyect {
         'Esta experiencia consolidó mi capacidad para trabajar bajo metodologías ágiles estrictas como Scrum, cumpliendo con entregas iterativas dentro de estándares de calidad profesional.'
       ],
       tecnologias: [
-        { nombre: 'Angular', iconoClase: '/logos/angularLogo.png', tamano: 35 },
-        { nombre: 'TypeScript', iconoClase: '/logos/typescritptLogo.png', tamano: 75 },
-        { nombre: '.NET', iconoClase: '/logos/.netLogo.png', tamano: 35 },
-        { nombre: 'Postman', iconoClase: '/logos/postmanLogo.svg', tamano: 35 },
-        { nombre: 'PostgresSQL', iconoClase: '/logos/postgresLogo.png', tamano: 35 },
-        { nombre: 'Visual Studio Code', iconoClase: '/logos/vscodeLogo.png', tamano: 35 },
-        { nombre: 'Visual Studio', iconoClase: '/logos/visualStudioLogo.png', tamano: 35 },
-        { nombre: 'GitLab CI', iconoClase: '/logos/gitlabLogo.png', tamano: 35 }
+        { nombre: 'Angular', iconoClase: 'logos/angularLogo.png', tamano: 35 },
+        { nombre: 'TypeScript', iconoClase: 'logos/typescritptLogo.png', tamano: 75 },
+        { nombre: '.NET', iconoClase: 'logos/.netLogo.png', tamano: 35 },
+        { nombre: 'Postman', iconoClase: 'logos/postmanLogo.svg', tamano: 35 },
+        { nombre: 'PostgresSQL', iconoClase: 'logos/postgresLogo.png', tamano: 35 },
+        { nombre: 'Visual Studio Code', iconoClase: 'logos/vscodeLogo.png', tamano: 35 },
+        { nombre: 'Visual Studio', iconoClase: 'logos/visualStudioLogo.png', tamano: 35 },
+        { nombre: 'GitLab CI', iconoClase: 'logos/gitlabLogo.png', tamano: 35 }
       ],
       enlaces: []
     },
@@ -47,13 +47,13 @@ export class Proyect {
         'La plataforma se encuentra desplegada de manera estable en un entorno de producción real, gestionando flujos de redirección continuos de forma diaria y demostrando una alta disponibilidad del servicio sin interrupciones.'
       ],
       tecnologias: [
-        { nombre: 'Spring Boot', iconoClase: '/logos/springbootLogo.png', tamano: 35 },
-        { nombre: 'Java', iconoClase: '/logos/javaLogo.png', tamano: 35 },
-        { nombre: 'Angular', iconoClase: '/logos/angularLogo.png', tamano: 35 },
-        { nombre: 'TypeScript', iconoClase: '/logos/typescritptLogo.png', tamano: 75 },
-        { nombre: 'Visual Studio Code', iconoClase: '/logos/vscodeLogo.png', tamano: 35 },
-        { nombre: 'Github', iconoClase: '/logos/githubLogo.png', tamano: 35 },
-        { nombre: 'Firebase', iconoClase: '/logos/firebaseLogo.png', tamano: 35 }
+        { nombre: 'Spring Boot', iconoClase: 'logos/springbootLogo.png', tamano: 35 },
+        { nombre: 'Java', iconoClase: 'logos/javaLogo.png', tamano: 35 },
+        { nombre: 'Angular', iconoClase: 'logos/angularLogo.png', tamano: 35 },
+        { nombre: 'TypeScript', iconoClase: 'logos/typescritptLogo.png', tamano: 75 },
+        { nombre: 'Visual Studio Code', iconoClase: 'logos/vscodeLogo.png', tamano: 35 },
+        { nombre: 'Github', iconoClase: 'logos/githubLogo.png', tamano: 35 },
+        { nombre: 'Firebase', iconoClase: 'logos/firebaseLogo.png', tamano: 35 }
       ],
       enlaces: [
         { url: 'https://github.com/JuanRamon245/AcortadorURLOnline', iconoClase: 'data_object' },
@@ -73,10 +73,10 @@ export class Proyect {
         'El diseño centrado en la usabilidad e interfaz dinámica ha permitido, según herramientas de analítica digital, un incremento significativo y sostenido en la conversión e interés de nuevos clientes potenciales.'
       ],
       tecnologias: [
-        { nombre: 'WordPress', iconoClase: '/logos/wordpressLogo.png', tamano: 35 },
-        { nombre: 'Bricks 2.0', iconoClase: '/logos/bricksLogo.png', tamano: 60 },
-        { nombre: 'Google Analytics', iconoClase: '/logos/googleAnaliticsLogo.png', tamano: 35 },
-        { nombre: 'Asana', iconoClase: '/logos/asanaLogo.png', tamano: 45 }
+        { nombre: 'WordPress', iconoClase: 'logos/wordpressLogo.png', tamano: 35 },
+        { nombre: 'Bricks 2.0', iconoClase: 'logos/bricksLogo.png', tamano: 60 },
+        { nombre: 'Google Analytics', iconoClase: 'logos/googleAnaliticsLogo.png', tamano: 35 },
+        { nombre: 'Asana', iconoClase: 'logos/asanaLogo.png', tamano: 45 }
       ],
       enlaces: [
         { url: 'https://transportesdelivery.com', iconoClase: 'link' }
@@ -97,10 +97,10 @@ export class Proyect {
         'La solución elimina la dependencia de procesos en papel y mitiga drásticamente los errores manuales de coordinación en cocina, agilizando el ritmo de servicio del local.'
       ],
      tecnologias: [
-        { nombre: 'Android Studio', iconoClase: '/logos/androidLogo.png', tamano: 35 },
-        { nombre: 'Java', iconoClase: '/logos/javaLogo.png', tamano: 35 },
-        { nombre: 'Github', iconoClase: '/logos/githubLogo.png', tamano: 35 },
-        { nombre: 'Firebase', iconoClase: '/logos/firebaseLogo.png', tamano: 35 }
+        { nombre: 'Android Studio', iconoClase: 'logos/androidLogo.png', tamano: 35 },
+        { nombre: 'Java', iconoClase: 'logos/javaLogo.png', tamano: 35 },
+        { nombre: 'Github', iconoClase: 'logos/githubLogo.png', tamano: 35 },
+        { nombre: 'Firebase', iconoClase: 'logos/firebaseLogo.png', tamano: 35 }
       ],
       enlaces: [
         { url: 'https://github.com/JuanRamon245/Cocinegocios', iconoClase: 'data_object' }
@@ -117,14 +117,14 @@ export class Proyect {
         'Este proyecto supuso un contacto directo con entornos de desarrollo profesionales complejos, el uso de herramientas de contenedorización de servicios y flujos de trabajo distribuidos.'
       ],
       tecnologias: [
-        { nombre: 'Java', iconoClase: '/logos/javaLogo.png', tamano: 35 },
-        { nombre: 'Jakarta', iconoClase: '/logos/jakartaLogo.png', tamano: 35 },
-        { nombre: 'Docker', iconoClase: '/logos/dockerLogo.png', tamano: 35 },
-        { nombre: 'PhpMyAdmin', iconoClase: '/logos/PhpMyAdminLogo.png', tamano: 35 },
-        { nombre: 'Fork', iconoClase: '/logos/forkLogo.png', tamano: 35 },
-        { nombre: 'Github', iconoClase: '/logos/githubLogo.png', tamano: 35 },
-        { nombre: 'IntelliJ', iconoClase: '/logos/intellijLogo.png', tamano: 35 },
-        { nombre: 'Postman', iconoClase: '/logos/postmanLogo.svg', tamano: 35 }
+        { nombre: 'Java', iconoClase: 'logos/javaLogo.png', tamano: 35 },
+        { nombre: 'Jakarta', iconoClase: 'logos/jakartaLogo.png', tamano: 35 },
+        { nombre: 'Docker', iconoClase: 'logos/dockerLogo.png', tamano: 35 },
+        { nombre: 'PhpMyAdmin', iconoClase: 'logos/PhpMyAdminLogo.png', tamano: 35 },
+        { nombre: 'Fork', iconoClase: 'logos/forkLogo.png', tamano: 35 },
+        { nombre: 'Github', iconoClase: 'logos/githubLogo.png', tamano: 35 },
+        { nombre: 'IntelliJ', iconoClase: 'logos/intellijLogo.png', tamano: 35 },
+        { nombre: 'Postman', iconoClase: 'logos/postmanLogo.svg', tamano: 35 }
       ],
       enlaces: []
     },
@@ -140,14 +140,14 @@ export class Proyect {
         'El resultado final unifica una interfaz limpia con una arquitectura interna estable y preparada para manejar operaciones comerciales concurrentes.'
       ],
       tecnologias: [
-        { nombre: 'Java', iconoClase: '/logos/javaLogo.png', tamano: 35 },
-        { nombre: 'Jakarta', iconoClase: '/logos/jakartaLogo.png', tamano: 35 },
-        { nombre: 'Docker', iconoClase: '/logos/dockerLogo.png', tamano: 35 },
-        { nombre: 'PhpMyAdmin', iconoClase: '/logos/PhpMyAdminLogo.png', tamano: 35 },
-        { nombre: 'Fork', iconoClase: '/logos/forkLogo.png', tamano: 35 },
-        { nombre: 'Github', iconoClase: '/logos/githubLogo.png', tamano: 35 },
-        { nombre: 'IntelliJ', iconoClase: '/logos/intellijLogo.png', tamano: 35 },
-        { nombre: 'Postman', iconoClase: '/logos/postmanLogo.svg', tamano: 35 }
+        { nombre: 'Java', iconoClase: 'logos/javaLogo.png', tamano: 35 },
+        { nombre: 'Jakarta', iconoClase: 'logos/jakartaLogo.png', tamano: 35 },
+        { nombre: 'Docker', iconoClase: 'logos/dockerLogo.png', tamano: 35 },
+        { nombre: 'PhpMyAdmin', iconoClase: 'logos/PhpMyAdminLogo.png', tamano: 35 },
+        { nombre: 'Fork', iconoClase: 'logos/forkLogo.png', tamano: 35 },
+        { nombre: 'Github', iconoClase: 'logos/githubLogo.png', tamano: 35 },
+        { nombre: 'IntelliJ', iconoClase: 'logos/intellijLogo.png', tamano: 35 },
+        { nombre: 'Postman', iconoClase: 'logos/postmanLogo.svg', tamano: 35 }
       ],
       enlaces: []
     },
@@ -163,11 +163,11 @@ export class Proyect {
         'Este proyecto actúa como mi laboratorio personal para la experimentación con nuevas características de diseño de interfaces y patrones de sincronización reactiva de datos.'
       ],
       tecnologias: [
-        { nombre: 'Angular', iconoClase: '/logos/angularLogo.png', tamano: 35 },
-        { nombre: 'TypeScript', iconoClase: '/logos/typescritptLogo.png', tamano: 75 },
-        { nombre: 'Visual Studio Code', iconoClase: '/logos/vscodeLogo.png', tamano: 35 },
-        { nombre: 'Github', iconoClase: '/logos/githubLogo.png', tamano: 35 },
-        { nombre: 'Firebase', iconoClase: '/logos/firebaseLogo.png', tamano: 35 },
+        { nombre: 'Angular', iconoClase: 'logos/angularLogo.png', tamano: 35 },
+        { nombre: 'TypeScript', iconoClase: 'logos/typescritptLogo.png', tamano: 75 },
+        { nombre: 'Visual Studio Code', iconoClase: 'logos/vscodeLogo.png', tamano: 35 },
+        { nombre: 'Github', iconoClase: 'logos/githubLogo.png', tamano: 35 },
+        { nombre: 'Firebase', iconoClase: 'logos/firebaseLogo.png', tamano: 35 },
 
       ],
       enlaces: [
@@ -187,14 +187,14 @@ export class Proyect {
         'El proyecto culminó con una calificación sobresaliente, destacando especialmente por la claridad de su arquitectura visual y su facilidad de uso para fomentar los procesos de adopción responsable.'
       ],
       tecnologias: [
-        { nombre: 'PHP', iconoClase: '/logos/phpLogo.png', tamano: 35 },
-        { nombre: 'HTML', iconoClase: '/logos/htmlLogo.png', tamano: 35 },
-        { nombre: 'CSS', iconoClase: '/logos/cssLogo.png', tamano: 35 },
-        { nombre: 'JavaScript', iconoClase: '/logos/javascriptLogo.png', tamano: 35 },
-        { nombre: 'PostgreSQL', iconoClase: '/logos/postgresLogo.png', tamano: 35 },
-        { nombre: 'Github', iconoClase: '/logos/githubLogo.png', tamano: 35 },
-        { nombre: 'Postman', iconoClase: '/logos/postmanLogo.svg', tamano: 35 },
-        { nombre: 'Visual Studio Code', iconoClase: '/logos/vscodeLogo.png', tamano: 35 },
+        { nombre: 'PHP', iconoClase: 'logos/phpLogo.png', tamano: 35 },
+        { nombre: 'HTML', iconoClase: 'logos/htmlLogo.png', tamano: 35 },
+        { nombre: 'CSS', iconoClase: 'logos/cssLogo.png', tamano: 35 },
+        { nombre: 'JavaScript', iconoClase: 'logos/javascriptLogo.png', tamano: 35 },
+        { nombre: 'PostgreSQL', iconoClase: 'logos/postgresLogo.png', tamano: 35 },
+        { nombre: 'Github', iconoClase: 'logos/githubLogo.png', tamano: 35 },
+        { nombre: 'Postman', iconoClase: 'logos/postmanLogo.svg', tamano: 35 },
+        { nombre: 'Visual Studio Code', iconoClase: 'logos/vscodeLogo.png', tamano: 35 },
       ],
       enlaces: [
         { url: 'https://github.com/...', iconoClase: 'data_object' }

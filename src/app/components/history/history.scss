@@ -411,7 +411,10 @@
     .bloque-titulo-wrapper {
       width: calc(100% - 4.5rem); 
       .bloque-titulo h2 { font-size: 1.5rem; }
-      .bloque-fecha { right: -1rem; }
+      .bloque-fecha { 
+        right: -1rem;
+        padding: 0.6rem 4rem 0.66rem 1.4rem;
+      }
       .extension { display: block; } 
     }
   }
@@ -437,7 +440,7 @@
         margin-left: 1rem !important;
 
         span { 
-          font-size: 7.5vw !important; 
+          font-size: 6.5vw !important; 
           top: -0.70em; 
           left: 1rem; 
           position: absolute;
@@ -484,7 +487,7 @@
       top: 0;
       right: -1rem;
       left: auto;
-      padding: 0.4rem 2.2rem 0.45rem 1rem;
+      padding: 0.4rem 3.2rem 0.45rem 1rem;
       clip-path: polygon(0 0, 0 100%, 82% 100%, 88% 50%, 82% 0);
       border-radius: 5px;
 

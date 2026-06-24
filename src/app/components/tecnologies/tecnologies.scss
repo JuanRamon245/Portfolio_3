@@ -723,24 +723,69 @@
 @media (max-width: 540px) {
   .grid-tecnologias { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 }
+
 @media (max-width: 430px) {
-  .grid-tecnologias { grid-template-columns: repeat(2, 1fr); }
-  .tech-card .badge-nivel-bloque { left: 33%; }
-}
-@media (max-width: 375px) {
+  .grid-tecnologias { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.8rem;
+  }
+
   .tech-card {
-    padding: 1rem 0.3rem 0.7rem 0.3rem;
-    .badge-nivel-bloque { left: 28%; height: 22px; .badge-texto { font-size: 0.6rem; } .barrita-nivel { width: 3px; height: 9px; } }
+    padding: 1rem 0.3rem 0.6rem 0.3rem;
+
+    .badge-nivel-bloque { 
+      left: 30%; 
+      height: 22px;
+      padding: 0 8px 0 8px;
+      .badge-texto { font-size: 0.6rem; }
+    }
+
     .centro-rombo {
-      padding: 1rem 0 !important;
+      flex: none;
+      flex-grow: 1;
+      flex-shrink: 0;
+      padding: 0.4rem 0 !important;
+
       .rombo-interior {
-        width: 54px; height: 54px;
-        &::before, &::after { width: 54px; height: 54px; }
-        &::before { transform: translate(-50%, -50%) rotate(-45deg) translateX(-44px) scaleX(-1); }
-        &::after  { transform: translate(-50%, -50%) rotate(-45deg) translateX(44px); }
-        .tech-img { max-width: 70%; max-height: 70%; }
+        width: 52px; height: 52px;
+        &::before, &::after { width: 52px; height: 52px; }
+        &::before { transform: translate(-50%, -50%) rotate(-45deg) translateX(-42px) scaleX(-1); }
+        &::after  { transform: translate(-50%, -50%) rotate(-45deg) translateX(42px); }
       }
     }
-    .tech-footer h4 { font-size: 1rem; }
+
+    .tech-footer h4 { 
+      font-size: 0.85rem;
+      line-height: 1.15;
+      padding-top: 4px; 
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .tech-card {
+    padding: 0.9rem 0.2rem 0.5rem 0.2rem;
+    
+    .badge-nivel-bloque { 
+      left: 24%; 
+      height: 20px; 
+      padding: 0 6px 0 6px;
+      .badge-texto { font-size: 0.55rem; } 
+      .barrita-nivel { width: 2px; height: 8px; gap: 2px; }
+    }
+
+    .centro-rombo {
+      .rombo-interior {
+        width: 44px; height: 44px;
+        &::before, &::after { width: 44px; height: 44px; }
+        &::before { transform: translate(-50%, -50%) rotate(-45deg) translateX(-36px) scaleX(-1); }
+        &::after  { transform: translate(-50%, -50%) rotate(-45deg) translateX(36px); }
+      }
+    }
+
+    .tech-footer h4 { 
+      font-size: 0.8rem; 
+      padding-top: 4px;
+    }
   }
 }
