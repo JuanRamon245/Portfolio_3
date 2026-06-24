@@ -303,7 +303,7 @@
  
   &.animando {
     .grid-tecnologias {
-      animation: difuminadoTexto 0.9s ease-out 0.4s forwards;
+      animation: difuminadoTexto 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.05s both;
     }
   }
 }

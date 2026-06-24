@@ -398,7 +398,7 @@
       width: 100% !important;
       .frame { width: 180px !important; }
     }
-    
+
     .contenedor-nombre {
       width: 100% !important;
       justify-content: center;
@@ -448,7 +448,7 @@
           animation: none !important;
 
           &::after {
-            transform: translateY(-50%) scale(1) !important;
+            transform: translateY(0%) scale(1) !important;
             animation: none !important;
           }
         }
