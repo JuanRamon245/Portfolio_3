@@ -26,7 +26,7 @@ export class Landing {
             this.observer?.disconnect(); 
           }
         },
-        { threshold: 0.2 }
+        { threshold: 0.05 }
       );
       this.observer.observe(this.el.nativeElement);
     }
