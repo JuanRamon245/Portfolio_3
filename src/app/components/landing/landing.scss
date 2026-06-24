@@ -1,4 +1,4 @@
-:host {
+aparecerTextoFijo:host {
   display: block;
   width: 100%;
   height: 100vh;
@@ -19,7 +19,8 @@
   to   { transform: scaleX(1); } 
 }
 
-@keyframes aparecerTextoFijo { 
+@keyframes aparecerTextoFijo {
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 

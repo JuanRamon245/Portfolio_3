@@ -37,7 +37,7 @@ export class Tecnologies {
         { nombre: 'Spring', iconoClase: 'logos/springLogo.png', nivel: 'Avanzado', tamano: 60 },
         { nombre: 'Springboot', iconoClase: 'logos/springbootLogo.png', nivel: 'Avanzado', tamano: 80 },
         { nombre: 'PHP', iconoClase: 'logos/phpLogo.png', nivel: 'Medio', tamano: 80 },
-        { nombre: '.Net', iconoClase: 'logos/.netLogo.png', nivel: 'Avanzado', tamano: 45 }
+        { nombre: '.Net', iconoClase: 'logos/netLogo.png', nivel: 'Avanzado', tamano: 45 }
       ]
     },
     {
