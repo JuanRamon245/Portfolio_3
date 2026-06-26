@@ -17,12 +17,12 @@ export class History {
       titulo: 'Cartif — Desarrollador Full-Stack',
       fecha: 'Feb. 2026 – Jun. 2026',
       descripcion: [
-        'Desarrollé un módulo Kanban completo integrado en el ERP corporativo de Cartif, replicando el ecosistema de gestión de GitLab para equipos internos.',
+        'Desarrollé un módulo Kanban completo integrado en el ERP corporativo de Cartif y actualmente en uso por el eequipo de desarrollo, replicando el ecosistema de gestión de GitLab para equipos internos.',
         'El proyecto abarcó todas las fases del ciclo de vida del software:',
-        '- análisis de requisitos con el equipo',
-        '- modelado de bases de datos relacionales',
-        '- lógica de negocio en el back-end con APIs .NET',
-        '- construcción de la interfaz dinámica y responsiva con Angular.',
+        '- Análisis de requisitos con el equipo',
+        '- Modelado de bases de datos relacionales',
+        '- Lógica de negocio en el back-end con APIs .NET',
+        '- Construcción de la interfaz dinámica y responsiva con Angular.',
         'Implementé pruebas funcionales con Jest, gestioné los flujos de integración y despliegue continuo con GitLab CI, y entregué en plazo trabajando bajo metodología Scrum con sprints reales. Una experiencia que consolidó mi capacidad para trabajar en entornos profesionales exigentes y entregar software de calidad dentro de plazos definidos.'
       ] 
     },
