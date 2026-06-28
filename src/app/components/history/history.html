@@ -30,6 +30,7 @@
           
           <div class="bloque-titulo-wrapper">
             <div class="bloque-titulo">
+              <div class="deco-titulo"></div>
               <h2>{{ hito.titulo }}</h2>
             </div>
             
@@ -43,6 +44,7 @@
           </div>
 
           <div class="bloque-descripcion">
+            <div class="deco-marco"></div>
             @for (linea of hito.descripcion; track $index) {
               @if (linea.startsWith('- ')) {
                 <div class="linea-lista">

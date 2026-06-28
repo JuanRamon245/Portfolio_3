@@ -17,20 +17,19 @@
           <span class="material-symbols-outlined">arrow_back</span>
           <div class="pulse"></div>
         </div>
+        <div class="flecha-deco"></div>
       </button>
 
       <div class="tarjeta-y-paginacion-wrapper">
         <div class="tarjeta-carrusel" [ngClass]="efectoDireccion()">
-          
+            
+          <div class="icono-header">
+            <span class="material-symbols-outlined">{{ proyectos[currentIndex()].iconoPrincipal }}</span>
+          </div>
+
           <div class="tarjeta-header">
-            <div class="icono-octagono">
-              <div class="icono-octagono-interno">
-                <span class="material-symbols-outlined">{{ proyectos[currentIndex()].iconoPrincipal }}</span>
-              </div>
-            </div>
             <h3>{{ proyectos[currentIndex()].titulo }}</h3>
           </div>
-          <hr class="divisor">
 
           <div class="tarjeta-contenido">
             @for (linea of proyectos[currentIndex()].contenido; track $index) {
@@ -45,25 +44,24 @@
             }
           </div>
 
-          <hr class="divisor">
-
           <div class="tarjeta-footer">
             <div class="tecnologias-seccion">
-              <div class="boton-contenedor estatico">
-                <div class="bloque bloque-principal">
+              <div class="tech-box">
+                <div class="deco-marco-tech"></div>
+                <div class="deco-punto-tech-tr"></div>
+                <div class="deco-punto-tech-bl"></div>
+                <div class="deco-linea-der-2"></div>
+                <div class="deco-linea-izq-2"></div>
+                <div class="iconos-tech-wrapper">
                   <div class="icono-tech tooltip-container" *ngFor="let tech of proyectos[currentIndex()].tecnologias">
                     <img class="texto-contenido"
-                        [style.width.px]="tech.tamano" 
-                        [style.height.px]="tech.tamano" 
+                        [style.width.px]="tech.tamano"
+                        [style.height.px]="tech.tamano"
                         [src]="tech.iconoClase"
                         [alt]="tech.nombre" />
                     <span class="tooltip-text">{{ tech.nombre }}</span>
                   </div>
                 </div>
-                <div class="bloque barra-1"></div>
-                <div class="bloque barra-2"></div>
-                <div class="bloque barra-3"></div>
-                <div class="bloque barra-4"></div>
               </div>
             </div>
 
@@ -77,7 +75,6 @@
                 </span>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -95,6 +92,7 @@
           <span class="material-symbols-outlined">arrow_forward</span>
           <div class="pulse"></div>
         </div>
+        <div class="flecha-deco"></div>
       </button>
       
     </div>
