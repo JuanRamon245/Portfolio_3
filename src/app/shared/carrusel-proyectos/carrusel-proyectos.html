@@ -23,8 +23,10 @@
       <div class="tarjeta-y-paginacion-wrapper">
         <div class="tarjeta-carrusel" [ngClass]="efectoDireccion()">
             
-          <div class="icono-header">
-            <span class="material-symbols-outlined">{{ proyectos[currentIndex()].iconoPrincipal }}</span>
+          <div class="icono-header-wrapper">
+            <div class="icono-header">
+              <span class="material-symbols-outlined">{{ proyectos[currentIndex()].iconoPrincipal }}</span>
+            </div>
           </div>
 
           <div class="tarjeta-header">
