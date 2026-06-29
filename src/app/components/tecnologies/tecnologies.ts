@@ -106,15 +106,6 @@ export class Tecnologies {
     if (isPlatformBrowser(this.platformId)) {
       this.observer = new IntersectionObserver(
         ([entry]) => {
-      //     if (entry.isIntersecting) {
-      //       this.isIntersecting.set(true);
-      //       this.observer?.disconnect(); 
-      //     }
-      //   },
-      //   {
-      //     threshold: 0.2 
-      //   }
-      // );
           const currentScrollY = window.scrollY;
           const scrollingDown = currentScrollY > this.lastScrollY;
           this.lastScrollY = currentScrollY;

@@ -13,18 +13,23 @@
   <div class="contenedor-inferior" *ngIf="secciones.length > 0">
     
     <div class="panel-lateral">
-      <div class="menu-contenedor">
-        <div class="menu-item" 
-             *ngFor="let seccion of secciones; let i = index"
-             [class.activo]="seccionActiva() === i"
-             (click)="seleccionarSeccion(i)">
-          
-          <div class="indicador-activo"></div>
-          
-          <div class="icono-rombo-pequeno">
-            <span class="material-symbols-outlined">{{ seccion.iconoClase }}</span>
+      <div class="scroll-movil-container">
+        <div class="menu-contenedor">
+          <div class="menu-item" 
+              *ngFor="let seccion of secciones; let i = index"
+              [class.activo]="seccionActiva() === i"
+              (click)="seleccionarSeccion(i)">
+            
+            <div class="indicador-activo"></div>
+            
+            <div class="icono-rombo-pequeno">
+              <span class="material-symbols-outlined">{{ seccion.iconoClase }}</span>
+            </div>
+
+            <div class="separador-vertical"></div>
+
+            <span class="menu-texto">{{ seccion.nombre }}</span>
           </div>
-          <span class="menu-texto">{{ seccion.nombre }}</span>
         </div>
       </div>
     </div>
