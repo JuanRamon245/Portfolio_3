@@ -28,7 +28,8 @@ export class Tecnologies {
         { nombre: 'TypeScript', iconoClase: 'logos/typescritptLogo.png', nivel: 'Avanzado', tamano: 120 },
         { nombre: 'JavaScript', iconoClase: 'logos/javascriptLogo.png', nivel: 'Avanzado', tamano: 70 },
         { nombre: 'SCSS', iconoClase: 'logos/cssLogo.png', nivel: 'Avanzado', tamano: 70 },
-        { nombre: 'HTML', iconoClase: 'logos/htmlLogo.png', nivel: 'Avanzado', tamano: 70 }
+        { nombre: 'HTML', iconoClase: 'logos/htmlLogo.png', nivel: 'Avanzado', tamano: 70 },
+        { nombre: 'Unity', iconoClase: 'logos/unityLogo.png', nivel: 'Avanzado', tamano: 70 },
       ]
     },
     {
@@ -39,7 +40,8 @@ export class Tecnologies {
         { nombre: 'Spring', iconoClase: 'logos/springLogo.png', nivel: 'Avanzado', tamano: 60 },
         { nombre: 'Springboot', iconoClase: 'logos/springbootLogo.png', nivel: 'Avanzado', tamano: 80 },
         { nombre: 'PHP', iconoClase: 'logos/phpLogo.png', nivel: 'Medio', tamano: 80 },
-        { nombre: '.Net', iconoClase: 'logos/netLogo.png', nivel: 'Avanzado', tamano: 45 }
+        { nombre: '.Net', iconoClase: 'logos/netLogo.png', nivel: 'Avanzado', tamano: 45 },
+        { nombre: 'C#', iconoClase: 'logos/csharpLogo.png', nivel: 'Avanzado', tamano: 80 }
       ]
     },
     {

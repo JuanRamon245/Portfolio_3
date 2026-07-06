@@ -14,6 +14,19 @@ export class History {
   public hitos = signal<HitoTimeline[]>([
     {
       id: 'step1',
+      titulo: 'Proyectos propios en producción — Desarrollador Full-Stack',
+      fecha: 'May. 2025 – Actualmente',
+      descripcion: [
+        'Diseño, desarrollo y mantengo plataformas reales de principio a fin, asumiendo todas las responsabilidades: arquitectura, front-end, back-end, despliegue y mantenimiento continuo. Entre los proyectos activos:',
+        '- Colaboración externa como subcontratado, para JDS Puertas y Ventanas, empresa de Mallorca. Desarrollo del núcleo de un configurador interactivo 3D en Unity, enfocado a la personalización de carpintería a medida de las puertas, ventanas y cerramientos. El sistema permite al usuario modificar dimensiones, materiales y perfiles en tiempo real, conectando la interfaz visual con servicios back-end para la gestión de cotizaciones. Actualmente está en fase de desarrollo, pero su lanzamiento está previsto en Agosto 2026.',
+        '- Un acortador de URLs empresarial construido con Spring Boot y Angular desde cero bajo arquitectura hexagonal, que lleva más de 9 meses en producción sin interrupciones.',
+        '- El liderazgo y desarrollo completo del CMS de Jhon Cuality Delivery, empresa de Mallorca y una plataforma de servicios logísticos en la que diseñé la interfaz, integré una calculadora dinámica de presupuestos y un sistema modular estacional, logrando un aumento del 37 % en la captación de clientes, medido y verificado con Google Analytics.',
+        '- Además, mantengo un proyecto personal de catálogo de títulos indexados con Firebase y Angular, con actualizaciones continuas.',
+        'Estos proyectos me han enseñado lo que ningún curso enseña: mantener código limpio y escalable, como gestionar clientes reales y tomar decisiones técnicas con consecuencias reales en base al futuro del producto.'
+      ]
+    },
+    {
+      id: 'step2',
       titulo: 'Cartif — Desarrollador Full-Stack',
       fecha: 'Feb. 2026 – Jun. 2026',
       descripcion: [
@@ -25,18 +38,6 @@ export class History {
         '- Construcción de la interfaz dinámica y responsiva con Angular.',
         'Implementé pruebas funcionales con Jest, gestioné los flujos de integración y despliegue continuo con GitLab CI, y entregué en plazo trabajando bajo metodología Scrum con sprints reales. Una experiencia que consolidó mi capacidad para trabajar en entornos profesionales exigentes y entregar software de calidad dentro de plazos definidos.'
       ] 
-    },
-    {
-      id: 'step2',
-      titulo: 'Proyectos propios en producción — Desarrollador Full-Stack',
-      fecha: 'May. 2025 – Actualmente',
-      descripcion: [
-        'Diseño, desarrollo y mantengo plataformas reales de principio a fin, asumiendo todas las responsabilidades: arquitectura, front-end, back-end, despliegue y mantenimiento continuo. Entre los proyectos activos:',
-        '- Un acortador de URLs empresarial construido con Spring Boot y Angular desde cero bajo arquitectura hexagonal, que lleva más de 9 meses en producción sin interrupciones.',
-        '- El liderazgo y desarrollo completo del CMS de Jhon Cuality Delivery, una plataforma de servicios logísticos en la que diseñé la interfaz, integré una calculadora dinámica de presupuestos y un sistema modular estacional, logrando un aumento del 37 % en la captación de clientes, medido y verificado con Google Analytics.',
-        '- Además, mantengo un proyecto personal de catálogo de títulos indexados con Firebase y Angular, con actualizaciones continuas.',
-        'Estos proyectos me han enseñado lo que ningún curso enseña: mantener código limpio y escalable, como gestionar clientes reales y tomar decisiones técnicas con consecuencias reales en base al futuro del producto.'
-      ]
     },
     {
       id: 'step3',

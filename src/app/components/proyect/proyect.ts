@@ -27,6 +27,7 @@ export class Proyect {
         { nombre: 'Angular', iconoClase: 'logos/angularLogo.png', tamano: 35 },
         { nombre: 'TypeScript', iconoClase: 'logos/typescritptLogo.png', tamano: 75 },
         { nombre: '.NET', iconoClase: 'logos/netLogo.png', tamano: 35 },
+        { nombre: 'C#', iconoClase: 'logos/csharpLogo.png', tamano: 35 },
         { nombre: 'Postman', iconoClase: 'logos/postmanLogo.svg', tamano: 35 },
         { nombre: 'PostgresSQL', iconoClase: 'logos/postgresLogo.png', tamano: 35 },
         { nombre: 'Visual Studio Code', iconoClase: 'logos/vscodeLogo.png', tamano: 35 },
