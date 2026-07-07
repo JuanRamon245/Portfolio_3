@@ -83,6 +83,7 @@ export class Tecnologies {
         { nombre: 'Spyder', iconoClase: 'logos/spyderLogo.png', nivel: 'Medio', tamano: 50 },
         { nombre: 'Visual Studio', iconoClase: 'logos/visualStudioLogo.png', nivel: 'Medio', tamano: 80 },
         { nombre: 'Visual Studio Code', iconoClase: 'logos/vscodeLogo.png', nivel: 'Avanzado', tamano: 50 },
+        { nombre: 'WebGL', iconoClase: 'logos/webglLogo.png', nivel: 'Avanzado', tamano: 50 },
         { nombre: 'Wordpress', iconoClase: 'logos/wordpressLogo.png', nivel: 'Medio', tamano: 50 },
         { nombre: 'IntelliJ', iconoClase: 'logos/intellijLogo.png', nivel: 'Básico', tamano: 50 }
       ]

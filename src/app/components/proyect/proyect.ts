@@ -12,6 +12,25 @@ import { CarruselProyectos } from "../../shared/carrusel-proyectos/carrusel-proy
 export class Proyect {
   public proyectosPrincipales = signal<Proyectos[]>([
     {
+      titulo: 'Configurador Interactivo 3D Paramétrico (JDS Puertas y Ventanas)',
+      iconoPrincipal: 'view_in_ar',
+      contenido: [
+        'Sistema interactivo en entornos web enfocado a la digitalización de catálogos industriales y personalización de elementos de carpintería a medida en tiempo real.',
+        'El proyecto se encuentra actualmente en fase de desarrollo avanzado del MVP, resolviendo la complejidad técnica de modelar restricciones físicas mediante software:',
+        '- Programación gráfica y paramétrica: Implementación de la lógica en Unity (C#) para permitir el escalado y modificación de perfiles, cristales y herrajes tridimensionales de forma dinámica sin deformar los componentes estructurales del modelo.',
+        '- Optimización para entornos Web: Configuración y compilación del entorno para su renderizado nativo en el navegador mediante WebGL, asegurando tasas de refresco fluidas y un consumo de memoria optimizado tanto en escritorio como en dispositivos móviles.',
+        '- Conexión de datos Front-to-Back: Diseño de la comunicación entre la escena 3D y los servicios API del servidor para transformar las elecciones visuales del usuario en datos estructurados listos para la tarificación de presupuestos.'
+      ],
+      tecnologias: [
+        { nombre: 'Unity', iconoClase: 'logos/unityLogo.png', tamano: 35 },
+        { nombre: 'C#', iconoClase: 'logos/csharpLogo.png', tamano: 35 },
+        { nombre: 'WebGL', iconoClase: 'logos/webglLogo.png', tamano: 35 }
+      ],
+      enlaces: [
+        { url: 'https://www.instagram.com/jds_puertas_ventanas/', iconoClase: 'link' }
+      ]
+    },
+    {
       titulo: 'Módulo Kanban Corporativo',
       iconoPrincipal: 'view_kanban',
       contenido: [

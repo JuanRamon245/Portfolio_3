@@ -14,14 +14,14 @@ export class History {
   public hitos = signal<HitoTimeline[]>([
     {
       id: 'step1',
-      titulo: 'Proyectos propios en producción — Desarrollador Full-Stack',
+      titulo: 'Proyectos propios y Desarrollo independiente',
       fecha: 'May. 2025 – Actualmente',
       descripcion: [
         'Diseño, desarrollo y mantengo plataformas reales de principio a fin, asumiendo todas las responsabilidades: arquitectura, front-end, back-end, despliegue y mantenimiento continuo. Entre los proyectos activos:',
-        '- Colaboración externa como subcontratado, para JDS Puertas y Ventanas, empresa de Mallorca. Desarrollo del núcleo de un configurador interactivo 3D en Unity, enfocado a la personalización de carpintería a medida de las puertas, ventanas y cerramientos. El sistema permite al usuario modificar dimensiones, materiales y perfiles en tiempo real, conectando la interfaz visual con servicios back-end para la gestión de cotizaciones. Actualmente está en fase de desarrollo, pero su lanzamiento está previsto en Agosto 2026.',
-        '- Un acortador de URLs empresarial construido con Spring Boot y Angular desde cero bajo arquitectura hexagonal, que lleva más de 9 meses en producción sin interrupciones.',
-        '- El liderazgo y desarrollo completo del CMS de Jhon Cuality Delivery, empresa de Mallorca y una plataforma de servicios logísticos en la que diseñé la interfaz, integré una calculadora dinámica de presupuestos y un sistema modular estacional, logrando un aumento del 37 % en la captación de clientes, medido y verificado con Google Analytics.',
-        '- Además, mantengo un proyecto personal de catálogo de títulos indexados con Firebase y Angular, con actualizaciones continuas.',
+        '- Colaboración externa (JDS Puertas y Ventanas, Mallorca): Desarrollo del núcleo técnico de un configurador interactivo 3D paramétrico en Unity (C# / WebGL) enfocado a la personalización de carpintería a medida. El sistema permite modificar dimensiones, materiales y perfiles en tiempo real, conectando la interfaz visual con servicios back-end para la gestión de cotizaciones. Actualmente está en fase de desarrollo, pero su lanzamiento está previsto en Agosto 2026.',
+        '- Acortador de URLs Empresarial: Plataforma SaaS construida con Spring Boot y Angular desde cero bajo arquitectura hexagonal, operativa en producción desde hace más de 9 meses sin interrupciones.',
+        '- Plataforma Logística (Jhon Quality Delivery): Desarrollo integral de un CMS para servicios de transporte en el que diseñé la interfaz, integré una calculadora dinámica de presupuestos y un sistema modular estacional, logrando un aumento del 37% en la captación de clientes (verificado con Google Analytics).',
+        '- Catálogo Multimedia Personal: Proyecto de catálogo de títulos indexados con Firebase y Angular, utilizado como entorno de pruebas para actualizaciones continuas.',
         'Estos proyectos me han enseñado lo que ningún curso enseña: mantener código limpio y escalable, como gestionar clientes reales y tomar decisiones técnicas con consecuencias reales en base al futuro del producto.'
       ]
     },
